@@ -34,6 +34,8 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .profileinfo { float: left; width: 700px; height: auto;}
 .profilenum { width: 700px; height: auto; text-align: center; display: inline-block; margin-top: 20px; }
 .follow { width: 200px; height: auto; float: left;}
+.btnarea { width: 550px; height: auto; display: inline-block; }
+.btnarea input[type="submit"] { border:none; outline: none; width: 100px; height: 50px; background-color: black; color: white; }
 
 /* Layout - footer */
 

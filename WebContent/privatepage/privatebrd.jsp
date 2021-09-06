@@ -114,6 +114,7 @@
 						</div>
 					</div>
 					<div class="btnarea">
+						<input type ="submit" name ="profileupbtn" value="프로필 편집">
 					</div>
 				</div>
 			</div>
