@@ -1,0 +1,52 @@
+
+	a { text-decoration: none; color: black; }
+	
+	.font1 {
+		font-size: 70pt;
+		font-weight: bold;
+		font-family: 'Paytone One', sans-serif;
+	}
+	
+	.font1 a { text-decoration: none; color: black;}
+
+	.font2 {
+		font-size: 12px;
+		font-weight: bold;
+		font-family: 'Nanum Gothic Coding', monospace;
+	}
+
+	.borderstyle {		
+		border-style: solid;
+		border-width: 1px;
+		padding-left: 10px;
+	}
+
+	.bordersize {
+		height: 50px;
+		width: 450px;
+	}
+
+	.table {
+		padding: 50px;
+		border-spacing: 0 10px;
+	}
+	
+	select { border: 0.2px gray solid; padding-left: 10px; }
+
+	input[type=text]:focus { outline: 0.5px solid black; border: 1px solid black; }
+	input[type=password]:focus { outline: 0.5px solid black; border: 1px solid black; }
+	
+	input[type=text]{ border: 0.2px gray solid; }
+	input[type=password]{ border: 0.2px gray solid; }
+
+	
+	tr { margin-bottom: 30px; }
+	
+	footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
+	.footerwrap { width: 980px; height: 100%; margin: 20px auto;}
+	.footerlogo { font-family: 'Paytone One', sans-serif; border-right: 1px gray solid; padding-right: 30px; font-size: 20pt;}
+	.footeradd { margin-left: 30px; font-size: 15pt;}
+	.footerwrap ul li{ display: inline;}
+	.footerinfo { float: right; padding-top: 10px; font-size: 15pt;}
+
+

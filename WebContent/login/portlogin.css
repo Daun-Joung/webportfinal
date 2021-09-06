@@ -1,0 +1,129 @@
+
+
+/* Layout */
+* { padding: 0px; margin: 0px; }
+.wrap { height: 100%; margin: 0px auto; }
+ul { list-style: none; }
+a { text-decoration: none; color: black; }
+
+/* Layout - header */
+.headerwrap { width: 100%; height: 230px; border-bottom: 1px gray solid;}
+header { width: 980px; height: 230px; margin: 0px auto; }
+header div.headertop { width: 980px; height: 30px; margin-bottom: 10px; margin-top: 10px; }
+header div.headermid { width: 980px; height: 120px; margin-bottom: 10px; text-align: center; font-weight: bold; font-size: 70pt;}
+header div.headerbot { width: 980px; height: 30px; padding-top: 10px; margin-bottom: 10px; text-align: center; font-size: 15pt; }
+
+.mainlogo {font-family: 'Paytone One', sans-serif;}
+.regi { float: right; font-size: 15pt;}
+.regi li { display: inline; }
+.regi ul li a:hover{ text-decoration: underline; }
+.snsnav li { display: inline; margin-right: 20px; float: left;}
+.mainnav ul { width: 980px; }
+.mainnav ul li { display: inline; margin-right: 40px;}
+.mainnav li a:hover{ color: red;}
+.mainnav li div input { border: 0 solid black; border-bottom: 1px solid black; }
+
+
+/* Layout - section */
+
+section { width: 980px; height: 600px; margin: 0px auto;}
+section div.sectitle { font-size: 20pt; font-weight: bold; }
+section div.section_login { width: 340px; height: 450px; padding-top: 90px; text-align: center; margin: 0px auto;}
+section input[type='text'] { width: 300px; height: 54px; margin-top: 30px; font-size: 12pt; padding: 0 18px;}
+section input[type='password'] { width: 300px; height: 54px; margin-top: 10px; font-size: 12pt; padding: 0 18px;}
+section input[type='checkbox'] { margin-right: 2px; color: black;}
+section div.securitychk { float: left; }
+section div.search { float: right; }
+section div.search li { display: inline; }
+section div.search li:hover { cursor: pointer; text-decoration: underline; }
+section div.etc { margin-top: 20px; font-size: 10pt; }
+section div.submitbtn { clear: both; }
+.submitbtn input[type='submit'] { width: 340px; height: 58px; margin-top: 20px; background-color: black; color: white; border: none; cursor: pointer;}
+#idfault{ width:340px; text-align:left; }
+#pwfault{ width:340px; text-align:left; }
+
+
+/* Layout - footer */
+
+footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
+.footerwrap { width: 980px; height: 100%; margin: 20px auto;}
+.footerlogo { font-family: 'Paytone One', sans-serif; border-right: 1px gray solid; padding-right: 30px; font-size: 20pt;}
+.footeradd { margin-left: 30px; font-size: 15pt;}
+.footerwrap ul li{ display: inline;}
+.footerinfo { float: right; padding-top: 10px; font-size: 15pt;}
+
+
+/*
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="search-box">
+      <input type="text" class="search-txt" name=""placeholder="Type to search">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+  </body>
+</html>
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+.search-box{
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #51e3d4;
+  border-radius: 30px;
+  transition: 0.4s;
+  width:30px;
+}
+.search-box:hover{
+  box-shadow: 0px 0px .5px 1px #51e3d4;
+  width: 282px;
+}
+.search-btn{
+  text-decoration: none;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #51e3d4;
+}
+.search-box:hover > .search-btn{
+  background-color: #fff;
+}
+.search-txt{
+  display: flex;
+  padding: 0;
+  width: 0px;
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  font-size: 1rem;
+  line-height: 30px;
+  transition: .4s;
+}
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+
+*/

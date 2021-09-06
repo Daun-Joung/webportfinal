@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="select">
+
+	<select id="mainSelect" resultType="bean.MagazineDTO">
+	
+	select * from magazine_tbl order by maga_readcount desc;
+	
+	</select>
+	
+	<select id="selectMagaList" resultType="bean.MagazineDTO" parameterType="java.util.Map">
+	
+	select * from magazine_tbl order by maga_re_ref desc, maga_re_seq asc limit #{StartRow},10;
+	
+	</select>
+	
+	<select id="selectcount" resultType="Integer">
+	
+	select count(*) from magazine_tbl;
+	
+	</select>
+	
+	<insert id="insert" parameterType="bean.MagazineDTO">
+
+	insert into magazine_tbl values(default , #{magatitle}, #{magacon}, #{magaimg}, 0, 0, 0, 0, now());
+
+	</insert>
+	
+	<select id="selectMagaDetail" resultType="bean.MagazineDTO" parameterType="bean.MagazineDTO">
+	
+	select * from magazine_tbl where magano = #{magano};
+	
+	</select>
+	
+	<update id="updateReadCount" parameterType="bean.MagazineDTO" >
+	
+	update magazine_tbl set maga_readcount = maga_readcount+1 where magano = #{magano};
+	
+	</update>
+	
+	<delete id="deleteMaga" parameterType = "bean.MagazineDTO">
+	
+	delete from magazine_tbl where magano = #{magano};
+	
+	</delete>
+	
+	<update id="updateMaga" parameterType="bean.MagazineDTO">
+	
+	update magazine_tbl set magatitle = #{magatitle}, magacon = #{magacon} where magano = #{magano};
+	
+	</update>
+
+</mapper>
