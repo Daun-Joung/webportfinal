@@ -25,7 +25,15 @@ header div.headerbot { width: 980px; height: 30px; padding-top: 10px; margin-bot
 
 /* Layout - section */
 section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
-.brdwrap { width: 900px; height: auto; margin: 20px auto; border: 0.2px #EAEAEA solid;}
+.brdprivateinfo { display: inline-block; }
+.brdwrap { width: 900px; height: auto; margin: 20px auto;  border-radius: 10px;}
+.profilepic { float: left; width: 160px; height: auto; margin-left: 40px; }
+.profilepic div{ width: 80px; height: 80px; padding: 10px; border: 0.2px #D5D5D5 solid; border-radius: 70%;}
+.profilepic div:hover{ border: 0.2px red solid; cursor: pointer;}
+.profilepic div img{ width: 80px; height: 80px; border-radius: 70%; object-fit: cover;}
+.profileinfo { float: left; width: 700px; height: auto;}
+.profilenum { width: 700px; height: auto; text-align: center; display: inline-block; margin-top: 20px; }
+.follow { width: 200px; height: auto; float: left;}
 
 /* Layout - footer */
 

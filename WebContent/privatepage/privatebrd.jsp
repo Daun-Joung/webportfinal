@@ -94,11 +94,27 @@
 		<div class="brdwrap">
 			<div class="brdprivateinfo">
 				<div class="profilepic">
-					<div><img src = "http://placehold.it/70x70"></div>
+					<div>
+						<img src="../portimg/user.png">
+					</div>
 				</div>
 				<div class="profileinfo">
-					<div></div>
-					<div class="btnarea"></div>
+					<div class = "profilenum">
+						<div class="follow">
+							<p>팔로워</p>
+							<p>숫자</p>
+						</div>
+						<div class="follow">
+							<p>팔로</p>
+							<p>숫자</p>
+						</div>
+						<div class="follow">
+							<p>게시글</p>
+							<p>숫자</p>
+						</div>
+					</div>
+					<div class="btnarea">
+					</div>
 				</div>
 			</div>
 		</div>
