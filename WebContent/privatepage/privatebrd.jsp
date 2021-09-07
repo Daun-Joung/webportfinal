@@ -103,7 +103,7 @@
 						<div class="btnarea">
 							<div class="idin"> <%=id %> </div>
 							<div class="btnin">						
-								<input type ="submit" name ="profileupbtn" value="프로필 편집">
+								<a href="../privatepage/privateinforegi.jsp"><input type ="button" name ="profileupbtn" value="프로필 등록"></a>
 							</div>
 						</div>
 						<div class = "profilenum">

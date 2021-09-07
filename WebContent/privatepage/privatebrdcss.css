@@ -36,7 +36,8 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .profilenum { width: 600px; height: auto; text-align: center; display: inline-block; margin-top: 20px; }
 .follow { width: 200px; height: auto; float: left;}
 .btnarea { width: 460px; height: auto; display: inline-block;}
-.btnarea div input[type="submit"] { border:none; outline: none; width: 100px; height: 40px; background-color: black; color: white; }
+.btnin input[type="button"] { border:none; outline: none; width: 100px; height: 40px; background-color: black; color: white; border-radius: 10px; }
+.btnin input[type="button"]:hover { cursor:pointer; }
 .idin { font-size: 30pt; float: left; margin-left: 70px; margin-right: 20px;  }
 .btnin { float: left; }
 
@@ -46,7 +47,7 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .brdconwrap { width: auto; height: auto; display: inline-block; float: right; }
 .brdconin { width: 700px; height: auto; background-color: #D5D5D5; border-radius: 10px;  padding: 20px;}
 .brdconin textarea { width: 680px; height: auto; border:none; outline: none; resize: none; background-color: #D5D5D5; overflow:hidden; }
-.regibtn { width: 740px; height: auto; margin-top: 10px; display: inline-block; }
+.regibtn { width: 740px; height: auto; padding-top: 10px; border-top: 0.2px #D5D5D5 solid; margin-top: 10px; display: inline-block; }
 .brdregipic { width: 150px; height: 20px; display: inline-block; float: left; margin-right: 10px; padding: 7px 10px; text-align: center; border-radius: 10px;}
 .brdregipic:hover { background-color: #EAEAEA; cursor: pointer; }
 .brdregipic img { width: 20px; height: 20px; float: left; margin-left: 20px; }
