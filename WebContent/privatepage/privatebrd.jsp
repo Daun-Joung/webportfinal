@@ -93,29 +93,65 @@
 	<section>
 		<div class="brdwrap">
 			<div class="brdprivateinfo">
-				<div class="profilepic">
-					<div>
-						<img src="../portimg/user.png">
+				<div class="privateinfo">
+					<div class="profilepic">
+						<div>
+							<img src="../portimg/user.png">
+						</div>
+					</div>
+					<div class="profileinfo">
+						<div class="btnarea">
+							<div class="idin"> <%=id %> </div>
+							<div class="btnin">						
+								<input type ="submit" name ="profileupbtn" value="프로필 편집">
+							</div>
+						</div>
+						<div class = "profilenum">
+							<div class="follow">
+								<p>팔로워</p>
+								<p>숫자</p>
+							</div>
+							<div class="follow">
+								<p>팔로잉</p>
+								<p>숫자</p>
+							</div>
+							<div class="follow">
+								<p>게시글</p>
+								<p>숫자</p>
+							</div>
+						</div>			
 					</div>
 				</div>
-				<div class="profileinfo">
-					<div class = "profilenum">
-						<div class="follow">
-							<p>팔로워</p>
-							<p>숫자</p>
+				<div class = "brdregi">
+					<div class="userpic">
+						<img src ="../portimg/user.png">
+					</div>
+					<div class="brdconwrap">
+						<div class="brdconin">
+							<textarea class="privatebrdcon" name="privatebrdcon" placeholder="id + 님 오늘 의상은 어떠신가요?"></textarea>
 						</div>
-						<div class="follow">
-							<p>팔로</p>
-							<p>숫자</p>
-						</div>
-						<div class="follow">
-							<p>게시글</p>
-							<p>숫자</p>
+						<div class="regibtn">
+							<div class="brdregipic" id="brdregipic">
+								<span><img src ="../portimg/camera.png"></span>
+								<div class="text">사진/동영상</div>
+							</div>
+							<div class="brdregibtn" id="brdregibtn">
+								<span><img src=""></span>
+								<span>등록</span>
+							</div>
 						</div>
 					</div>
-					<div class="btnarea">
-						<input type ="submit" name ="profileupbtn" value="프로필 편집">
-					</div>
+				</div>
+				<div class="brdgallery">
+					<ul>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>
+						<li><img src="http://placehold.it/290x290"></li>		
+					</ul>
 				</div>
 			</div>
 		</div>
