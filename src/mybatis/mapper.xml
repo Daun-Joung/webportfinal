@@ -75,4 +75,10 @@
 	
 	</select>
 	
+	<select id ="getbrddetail" parameterType = "bean.BoardGetDTO" resultType = "bean.BoardGetDTO">
+	
+	select *, privatebrd_tbl.user_id as id from privatebrd_tbl, privateinfo_tbl where pbrdno = #{pbrdno} group by privateinfo_tbl.user_id having privateinfo_tbl.user_id = #{id};
+	
+	</select>
+	
 </mapper>

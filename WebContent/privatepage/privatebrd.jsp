@@ -199,7 +199,7 @@
 						for(int i=0;i<pbrdlist.size();i++){
 							%>
 							<li>
-								<a href=""><img src="../privateBrdUpload/<%=pbrdlist.get(i).getPbrd_pic()%>"></a>
+								<a href="../privatepage/privatebrddetail.jsp"><img src="../privateBrdUpload/<%=pbrdlist.get(i).getPbrd_pic()%>"></a>
 							</li>	
 						<%							
 						}
