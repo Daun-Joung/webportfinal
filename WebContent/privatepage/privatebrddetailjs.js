@@ -7,5 +7,15 @@ $(document).ready(function(){
 		
 	});
 	
+	$('.reply').click(function(){
+		
+		if($('.replyin').css('display') === 'none'){
+			$('.replyin').css('display','inline-block');
+		}else{
+			$('.replyin').hide();
+		}
+		
+		
+	});
 	
 });

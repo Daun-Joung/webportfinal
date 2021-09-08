@@ -54,11 +54,11 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 
 .replywrap { width: 600px; height: auto;}
 
-.replyin { width: 580px; height: auto; display: inline-block; padding: 10px;}
+.replyin { width: 580px; height: auto; display: inline-block; padding: 10px; display: none;}
 .replypic { width: 30px; height: 30px; float: left; padding: 10px 20px 10px 10px;}
 .replypic img{ width: 30px; height: 30px;}
 .replybox { width: 490px; padding: 20px 10px 20px 15px; height: auto; float: left; background-color: #D5D5D5; border-radius: 10px;}
-.replybox textarea { width: 480px; height: auto; border: none; outline: none; background-color: #D5D5D5; resize: none;}
+.replybox textarea { width: 480px; height: auto; border: none; outline: none; background-color: #D5D5D5; resize: none; overflow: hidden;}
 .replybox input[type="submit"] { width: 150px; height: 30px; border:none; outline: none; background-color: black; color: white; border-radius: 10px;}
 .replybox input[type="submit"]:hover { cursor: pointer; }
 

@@ -22,18 +22,18 @@ public class PrivateBrdDetailAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		int pbrdno = Integer.parseInt(request.getParameter("pbrdno"));//int
-		String id = request.getParameter("id");//string
+		
 		
 		BoardGetDTO dto = new BoardGetDTO();
 		dto.setPbrdno(pbrdno);
-		dto.setId(id);
+		
 		
 		PrivateBrdDetailService srv = PrivateBrdDetailService.instance();
 		List<BoardGetDTO> brddetail = srv.getBrdDetail(dto);
 		
 		ActionForward forward = new ActionForward();
 		request.setAttribute("brddetail", brddetail);
-		forward.setPath("privateBrdDetail.jsp");
+		forward.setPath("privatebrddetail.jsp");
 		
 		return forward;
 	}

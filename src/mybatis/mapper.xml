@@ -77,8 +77,27 @@
 	
 	<select id ="getbrddetail" parameterType = "bean.BoardGetDTO" resultType = "bean.BoardGetDTO">
 	
-	select *, privatebrd_tbl.user_id as id from privatebrd_tbl, privateinfo_tbl where pbrdno = #{pbrdno} group by privateinfo_tbl.user_id having privateinfo_tbl.user_id = #{id};
+	select 
+		privatebrd_tbl.pbrdno,
+ 	    privatebrd_tbl.user_id as id,
+   		privatebrd_tbl.pbrd_pic,
+   	 	privatebrd_tbl.pbrd_con,
+   	 	privatebrd_tbl.pbrd_date,
+    	privateinfo_tbl.user_weight,
+    	privateinfo_tbl.user_height,
+    	privateinfo_tbl.user_top,
+    	privateinfo_tbl.user_bottom,
+    	privateinfo_tbl.user_shoe,
+    	privateinfo_tbl.user_img
+	from privatebrd_tbl, privateinfo_tbl
+	where pbrdno = #{pbrdno} and privateinfo_tbl.user_id = privatebrd_tbl.user_id;
 	
 	</select>
+	
+	<insert id ="privatebrdreply" parameterType ="bean.PrivateBrdReplyDTO">
+	
+	insert into privatebrdreply_tbl values(default, #{user_id}, #{pbrdno}, #{reply_con}, 1, 1, 1, now(), #{user_img});
+	
+	</insert>
 	
 </mapper>

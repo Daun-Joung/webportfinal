@@ -1,3 +1,4 @@
+<%@page import="bean.BoardGetDTO"%>
 <%@page import="bean.PrivateBrdDTO"%>
 <%@page import="svc.PrivateBrdSelService"%>
 <%@page import="bean.PrivateInfoDTO"%>
@@ -14,15 +15,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = (String) session.getAttribute("ID");
 
- 	MagazineMainService srv = MagazineMainService.instance();
-	List<MagazineDTO> mainlist = srv.mainSelect();
-	
-	MystyleMainService mystylesrv = MystyleMainService.instance();
-	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
-	
-	PrivateBrdSelService pbss = PrivateBrdSelService.instance();
-	List<PrivateBrdDTO> pbrdlist = pbss.getPrivateBrd(id);
-	
+	List<BoardGetDTO> brddetail = (List<BoardGetDTO>)request.getAttribute("brddetail");
 %>
 
 <!DOCTYPE html>
@@ -101,13 +94,18 @@
 	</header>
 	</div>
 	<section>
+	
+		<%
+		for(int i=0;i<brddetail.size();i++){
+		%>
+		
 		<div class="detailwrap">
 			<div class="detailheader">
 				<div class="detailheaderwrap">
 					<div class="user_pic">
-						<img src ="../portimg/user.png">
+						<img src ="../privateProfileUpload/<%=brddetail.get(i).getUser_img()%>">
 					</div>
-					<div class="user_id"> <%=id %></div>
+					<div class="user_id"> <%=brddetail.get(i).getId()%></div>
 					<div class="headermenu">
 						<img src="../portimg/menu.png">
 					</div>
@@ -115,17 +113,17 @@
 			</div>
 			<div class="detailsection">
 				<div class="pbrd_pic">
-					<img src="http://placehold.it/600x600">
+					<img src="../privateBrdUpload/<%=brddetail.get(i).getPbrd_pic()%>">
 				</div>
 			</div>
 			<div class="detailmiddle">
 				<div class="privateinfodetail">
 					<ul>
-						<li>키: 176cm</li>
-						<li>몸무게: 84kg</li>
-						<li>상의사이즈: xxl</li>
-						<li>하의사이즈: 32</li>
-						<li>신발사이즈: 270</li>
+						<li>키: <%=brddetail.get(i).getUser_height() %>cm</li>
+						<li>몸무게: <%=brddetail.get(i).getUser_weight()%>kg</li>
+						<li>상의사이즈: <%=brddetail.get(i).getUser_top() %></li>
+						<li>하의사이즈: <%=brddetail.get(i).getUser_bottom() %></li>
+						<li>신발사이즈: <%=brddetail.get(i).getUser_shoe() %></li>
 					</ul>
 				</div>
 			</div>
@@ -147,6 +145,7 @@
 							<img src ="../portimg/user.png">
 						</div>
 						<div class="replybox">
+							<input type="hidden" name="">
 							<textarea placeholder="댓글을 입력하세요" class="replycon"></textarea>
 							<input type="submit" value="댓글 등록">
 						</div>
@@ -154,6 +153,11 @@
 				</div>
 			</div>
 		</div>
+			
+		<%	
+		}
+		%>
+		
 	</section>
 	<footer>
 		<div class="footerwrap">
