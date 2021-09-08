@@ -140,7 +140,18 @@
 						<label>댓글달기</label>
 					</div>
 				</div>
-				<div class="replywrap"></div>
+				<div class="replywrap">
+					<div class="printreply"></div>
+					<div class="replyin">
+						<div class="replypic">
+							<img src ="../portimg/user.png">
+						</div>
+						<div class="replybox">
+							<textarea placeholder="댓글을 입력하세요" class="replycon"></textarea>
+							<input type="submit" value="댓글 등록">
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
