@@ -62,4 +62,17 @@
 	select * from privateinfo_tbl where user_id = #{user_id};
 	
 	</select>
+	
+	<insert id ="privatebrdregi" parameterType="bean.PrivateBrdDTO">
+	
+	insert into privatebrd_tbl values(default, #{user_id}, #{pbrd_pic}, #{pbrd_con}, now());
+	
+	</insert>
+	
+	<select id ="privatebrdsel" parameterType ="bean.PrivateBrdDTO" resultType = "bean.PrivateBrdDTO">
+	
+	select * from privatebrd_tbl where user_id = #{user_id};
+	
+	</select>
+	
 </mapper>

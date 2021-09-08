@@ -1,3 +1,5 @@
+<%@page import="bean.PrivateBrdDTO"%>
+<%@page import="svc.PrivateBrdSelService"%>
 <%@page import="bean.PrivateInfoDTO"%>
 <%@page import="svc.MystyleMainService"%>
 <%@page import="svc.MagazineMainService"%>
@@ -17,6 +19,9 @@
 	
 	MystyleMainService mystylesrv = MystyleMainService.instance();
 	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
+	
+	PrivateBrdSelService pbss = PrivateBrdSelService.instance();
+	List<PrivateBrdDTO> pbrdlist = pbss.getPrivateBrd(id);
 	
 %>
 
@@ -39,7 +44,7 @@
 </head>
 
 <body>
-	<form>
+	<form action="PrivateBrdRegi.do?comm=privateBrdRegi" method="post" enctype="multipart/form-data">
 	<div class="wrap">
 	<div class="headerwrap">
 		<header>
@@ -169,13 +174,17 @@
 					</div>
 					<div class="brdconwrap">
 						<div class="brdconin">
-							<textarea class="privatebrdcon" name="privatebrdcon" placeholder="<%=id%>님 오늘 의상은 어떠신가요?"></textarea>
+							<input type="hidden" name="user_id" value="<%=id%>">
+							<textarea class="privatebrdcon" name="pbrd_con" placeholder="<%=id%>님 오늘 의상은 어떠신가요?"></textarea>
+							<div id="imgpreview">
+								<img src="http://placehold.it/700x700" id="previewbox" style="display:none;">
+							</div>
 						</div>
 						<div class="regibtn">
 							<div class="brdregipic" id="brdregipic">
 								<span><img src ="../portimg/camera.png"></span>
 								<label for="pbrd_img" class="text">사진/동영상</label>
-								<input type="file" name="pbrd_img" id="pbrd_img" accept="image/*" style="display:none;">
+								<input type="file" name="pbrd_pic" id="pbrd_img" accept="image/*" onchange ="imgpreview(event);" style="display:none;">
 							</div>
 							<div class="brdregibtn" id="brdregibtn">
 								<label for="pbrd_regi" id="brdsubbtn">등록</label>
@@ -186,13 +195,15 @@
 				</div>
 				<div class="brdgallery">
 					<ul>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>
-						<li><img src="http://placehold.it/290x290"></li>		
+					<%
+						for(int i=0;i<pbrdlist.size();i++){
+							%>
+							<li>
+								<a href=""><img src="../privateBrdUpload/<%=pbrdlist.get(i).getPbrd_pic()%>"></a>
+							</li>	
+						<%							
+						}
+					%>
 					</ul>
 				</div>
 			</div>
