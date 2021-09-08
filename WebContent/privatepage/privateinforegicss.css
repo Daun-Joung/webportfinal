@@ -30,11 +30,18 @@ section { width: 1280px; height: 100%; margin: 0px auto;}
 .secondwrap { display: inline-block;}
 .imgup { width: 350px; height: 350px; }
 .imgupbtn { width: 350px; height: 50px; margin-top: 20px;}
-.inputfile { width: 350px; height: 30px; text-align: center; padding-top: 10px; background-color: black; color: white; border-radius: 10px; }
+.inputfile { width: 250px; height: 30px; float: left; text-align: center; padding-top: 10px; background-color: black; color: white; border-radius: 10px; }
+.bodysizeregibtn {  float: left; }
+
 .userpic { width: 350px; height: auto; margin-right: 20px; float:left;}
-.bodysize { width: 530px; height: auto; float: right; display: inline-block; }
-.bodysizetext { float: left; margin-right: 30px;}
-.bodysizenum { float: left; }
+.bodysize { width: 530px; height: auto; float: right; display: inline-block;}
+.bodysizetext { width: 100px; height: auto; float: left; margin-right: 30px;}
+.bodysizetext ul { width: 100px; height: auto;}
+.bodysizetext ul li { width: 100px; height: 30px; font-size: 15pt; margin-bottom: 30px;  }
+.bodysizenum { width: 330px; height: auto; float: left; }
+.bodysizenum ul { width: 330px; height: auto; }
+.bodysizenum ul li { width: 330px; height: 30px; margin-bottom: 30px;}
+.bodysizenum ul li input[type="text"] { width: 300px; height: 30px; font-size: 10pt; border: none; border-bottom: 0.5px #D5D5D5 solid; }
 
 
 /* Layout - footer */

@@ -97,14 +97,20 @@
 				<div class="imgup">
 					<img src="http://placehold.it/350x350">
 				</div>
+				
+			</div>
+			<div class="bodysize">
 				<div class="imgupbtn">
 					<label for="input-file" class="inputfile">
-						업로드
+						사진 업로드
 					</label>
 					<input type="file" id="input-file" style="display:none;">
 				</div>
-			</div>
-			<div class="bodysize">
+			
+				<div class="bodysizeregibtn">
+					<input type="submit" name="profilein" id ="profilein" value="프로필 등">
+				</div>
+			
 				<div class="bodysizetext">
 					<ul>
 						<li>몸무게</li>
@@ -123,6 +129,7 @@
 						<li><input type ="text" name="user_shoe"></li>
 					</ul>
 				</div>
+				
 			</div>
 			</div>
 		</div>
