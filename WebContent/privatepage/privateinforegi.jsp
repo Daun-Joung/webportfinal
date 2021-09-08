@@ -34,7 +34,7 @@
 </head>
 
 <body>
-	<form>
+	<form action="privateInfoRegi.do?comm=privateInfoRegi" method="post" enctype="multipart/form-data">
 	<div class="wrap">
 	<div class="headerwrap">
 		<header>
@@ -95,22 +95,24 @@
 			<div class="secondwrap">
 			<div class="userpic">
 				<div class="imgup">
-					<img src="http://placehold.it/350x350">
+					<img src="http://placehold.it/350x350" id="imgup">
 				</div>
 				
 			</div>
 			<div class="bodysize">
+			<div class = "doublebtn">
 				<div class="imgupbtn">
 					<label for="input-file" class="inputfile">
 						사진 업로드
 					</label>
-					<input type="file" id="input-file" style="display:none;">
+					<input type="file" name="user_img" id="input-file" accept="image/*" onchange="preview(event);" style="display:none;">
 				</div>
 			
 				<div class="bodysizeregibtn">
-					<input type="submit" name="profilein" id ="profilein" value="프로필 등">
+					<input type="submit" name="profilein" id ="profilein" value="프로필 등록">
+					<input type="hidden" name="user_id" value="<%=id%>">
 				</div>
-			
+			</div>
 				<div class="bodysizetext">
 					<ul>
 						<li>몸무게</li>

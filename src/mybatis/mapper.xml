@@ -50,5 +50,11 @@
 	update magazine_tbl set magatitle = #{magatitle}, magacon = #{magacon} where magano = #{magano};
 	
 	</update>
+	
+	<insert id="privateinforegi" parameterType = "bean.PrivateInfoDTO">
+	
+	insert into privateinfo_tbl values(#{user_id}, #{user_weight}, #{user_height}, #{user_top}, #{user_bottom}, #{user_shoe}, #{user_img});
+	
+	</insert>
 
 </mapper>

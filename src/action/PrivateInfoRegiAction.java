@@ -35,11 +35,11 @@ public class PrivateInfoRegiAction implements Action{
 		MultipartRequest multi = new MultipartRequest(request, realFolder, filesize, "UTF-8", new DefaultFileRenamePolicy());
 		
 		String user_id = multi.getParameter("user_id");
-		int user_height = Integer.parseInt(multi.getParameter("height"));
-		int user_weight = Integer.parseInt(multi.getParameter("weight"));
-		String user_top =  multi.getParameter("up");
-		int user_bottom = Integer.parseInt(multi.getParameter("bottom"));
-		int user_shoe = Integer.parseInt(multi.getParameter("shoe"));
+		int user_height = Integer.parseInt(multi.getParameter("user_height"));
+		int user_weight = Integer.parseInt(multi.getParameter("user_weight"));
+		String user_top =  multi.getParameter("user_top");
+		int user_bottom = Integer.parseInt(multi.getParameter("user_bottom"));
+		int user_shoe = Integer.parseInt(multi.getParameter("user_shoe"));
 		
 		PrivateInfoDTO dto = new PrivateInfoDTO();
 		
