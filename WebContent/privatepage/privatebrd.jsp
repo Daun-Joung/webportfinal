@@ -1,3 +1,5 @@
+<%@page import="bean.PrivateInfoDTO"%>
+<%@page import="svc.MystyleMainService"%>
 <%@page import="svc.MagazineMainService"%>
 <%@page import="bean.MagazineDTO"%>
 <%@page import="java.util.List"%>
@@ -12,6 +14,9 @@
 
  	MagazineMainService srv = MagazineMainService.instance();
 	List<MagazineDTO> mainlist = srv.mainSelect();
+	
+	MystyleMainService mystylesrv = MystyleMainService.instance();
+	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 	
 %>
 
@@ -96,14 +101,38 @@
 				<div class="privateinfo">
 					<div class="profilepic">
 						<div>
-							<img src="../portimg/user.png">
+							<%
+						if(id != null){
+							for(int i=0;i<profilelist.size();i++){
+								%>
+								<img src ="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
+								<%
+							}
+						}else{
+							%>
+							<img src ="../portimg/user.png">
+							<%
+						}
+					%>	
 						</div>
 					</div>
 					<div class="profileinfo">
 						<div class="btnarea">
 							<div class="idin"> <%=id %> </div>
-							<div class="btnin">						
+							<div class="btnin">
+							<%
+							if(profilelist.size() == 1){
+								%>
+								<a href="../privatepage/privateinforegi.jsp"><input type ="button" name ="profileupbtn" value="프로필 편집"></a>
+							
+							<%
+							}else{
+								%>
 								<a href="../privatepage/privateinforegi.jsp"><input type ="button" name ="profileupbtn" value="프로필 등록"></a>
+							<%
+							}
+							%>
+								
 							</div>
 						</div>
 						<div class = "profilenum">
@@ -124,20 +153,33 @@
 				</div>
 				<div class = "brdregi">
 					<div class="userpic">
-						<img src ="../portimg/user.png">
+					<%
+						if(id != null){
+							for(int i=0;i<profilelist.size();i++){
+								%>
+								<img src ="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
+								<%
+							}
+						}else{
+							%>
+							<img src ="../portimg/user.png">
+							<%
+						}
+					%>			
 					</div>
 					<div class="brdconwrap">
 						<div class="brdconin">
-							<textarea class="privatebrdcon" name="privatebrdcon" placeholder="id + 님 오늘 의상은 어떠신가요?"></textarea>
+							<textarea class="privatebrdcon" name="privatebrdcon" placeholder="<%=id%>님 오늘 의상은 어떠신가요?"></textarea>
 						</div>
 						<div class="regibtn">
 							<div class="brdregipic" id="brdregipic">
 								<span><img src ="../portimg/camera.png"></span>
-								<div class="text">사진/동영상</div>
+								<label for="pbrd_img" class="text">사진/동영상</label>
+								<input type="file" name="pbrd_img" id="pbrd_img" accept="image/*" style="display:none;">
 							</div>
 							<div class="brdregibtn" id="brdregibtn">
-								<span><img src=""></span>
-								<span>등록</span>
+								<label for="pbrd_regi" id="brdsubbtn">등록</label>
+								<input type="submit" name="pbrdregi" id="pbrd_regi" style="display:none;">
 							</div>
 						</div>
 					</div>

@@ -43,7 +43,7 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 
 .brdregi { width: 860px; height: auto; border: 0.2px #D5D5D5 solid; margin-top: 20px; display: inline-block; border-radius: 10px; padding: 10px;}
 .userpic { width: 120px; height: auto; float: left; text-align: center;}
-.userpic img { width: 50px; height: 50px; object-fit: cover; }
+.userpic img { width: 50px; height: 50px; object-fit: cover; border-radius: 70%; }
 .brdconwrap { width: auto; height: auto; display: inline-block; float: right; }
 .brdconin { width: 700px; height: auto; background-color: #D5D5D5; border-radius: 10px;  padding: 20px;}
 .brdconin textarea { width: 680px; height: auto; border:none; outline: none; resize: none; background-color: #D5D5D5; overflow:hidden; }
@@ -51,9 +51,11 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .brdregipic { width: 150px; height: 20px; display: inline-block; float: left; margin-right: 10px; padding: 7px 10px; text-align: center; border-radius: 10px;}
 .brdregipic:hover { background-color: #EAEAEA; cursor: pointer; }
 .brdregipic img { width: 20px; height: 20px; float: left; margin-left: 20px; }
-.text { float:left; margin-left:10px; margin-top:3px; }
-.brdregibtn { width: 150px; height: 20px; float: left; padding: 7px 10px; text-align: center; border-radius: 10px; }
+.text { display: inline-block; float:left; margin-left:10px; margin-top:3px; }
+.text:hover { cursor: pointer; }
+.brdregibtn { width: 150px; height: 17px; float: left; padding: 10px 10px 7px 10px; text-align: center; border-radius: 10px; }
 .brdregibtn:hover { background-color:#EAEAEA; cursor: pointer;}
+#brdsubbtn:hover { cursor: pointer;}
 
 .brdgallery { width: 920px; height: auto;}
 .brdgallery ul li{ display: inline-block; }

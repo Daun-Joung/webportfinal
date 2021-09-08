@@ -57,4 +57,9 @@
 	
 	</insert>
 
+	<select id ="getprivateinfo" parameterType ="bean.PrivateInfoDTO" resultType="bean.PrivateInfoDTO">
+	
+	select * from privateinfo_tbl where user_id = #{user_id};
+	
+	</select>
 </mapper>
