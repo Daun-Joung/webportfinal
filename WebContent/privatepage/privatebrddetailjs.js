@@ -18,4 +18,31 @@ $(document).ready(function(){
 		
 	});
 	
+	$('#replyregibtn').click(function(){
+		
+		$.ajax({
+			url:"privatebrdreply.do?comm=privatebrdreply",
+			type:"post",
+			data: { 
+				"user_id":$("#user_id").val(),
+				
+				"pbrdno":$("#pbrdno").val(),
+				
+				"reply_con":$("#reply_con").val(),
+				
+				"user_img":$("#user_img").val()
+				},
+			
+			success :function onData(data){
+				location.reload();
+			},
+			error: function onError(error){
+				console.error(error);
+			}
+			
+		})
+		
+	});
+	
+	
 });

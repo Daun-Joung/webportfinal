@@ -96,7 +96,7 @@
 	
 	<insert id ="privatebrdreply" parameterType ="bean.PrivateBrdReplyDTO">
 	
-	insert into privatebrdreply_tbl values(default, #{user_id}, #{pbrdno}, #{reply_con}, 1, 1, 1, now(), #{user_img});
+	insert into privatebrdreply_tbl values(default, #{pbrdno}, #{user_id}, #{reply_con}, 1, 1, 1, now(), #{user_img});
 	
 	</insert>
 	

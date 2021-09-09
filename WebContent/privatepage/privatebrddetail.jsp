@@ -150,22 +150,31 @@
 					<div class="printreply"></div>
 					<div class="replyin">
 						<div class="replypic">
-							<img src ="../portimg/user.png">
+						<%
+						for(int i=0;i<profilelist.size();i++){
+						%>
+							<img src ="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
+						<%	
+						}
+						%>
+						
+							
 						</div>
 						<div class="replybox">
-							<input type="hidden" name="pbrdno" value="<%=pbrdno%>">
-							<input type="hidden" name="user_id" value="<%=id%>">
+							<input type="hidden" id= "user_id" value="<%=id%>" />
+							
+							<input type="hidden"  id= "pbrdno" value="<%=pbrdno%>" />
 							<%
 							for(int i=0;i<profilelist.size();i++){
 								%>
 								
-								<input type="hidden" name="user_img" value="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
+								<input type="hidden" id="user_img" value="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
 								
 								<%
 							}
 							%>
-							<textarea placeholder="댓글을 입력하세요" name = "replycon" class="replycon"></textarea>
-							<input type="submit" value="댓글 등록">
+							<textarea placeholder="댓글을 입력하세요" id ="reply_con" ></textarea>
+							<input type="button" value="댓글 등록" id="replyregibtn">
 						</div>
 					</div>
 				</div>

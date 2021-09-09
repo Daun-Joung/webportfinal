@@ -28,8 +28,7 @@ public class PrivateBrdReplyAction implements Action{
 		
 		String user_id = request.getParameter("user_id");
 		String reply_con = request.getParameter("reply_con");
-		int pbrdno = Integer.parseInt(request.getParameter("pbno"));
-		String id = request.getParameter("id");
+		int pbrdno = Integer.parseInt(request.getParameter("pbrdno"));
 		String user_img = request.getParameter("user_img");
 		
 		dto.setUser_img(user_img);
@@ -52,7 +51,7 @@ public class PrivateBrdReplyAction implements Action{
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("privateBrdDetail.do?comm=privateBrdDetail&pbrdno="+pbrdno+"&id="+id+"");
+			forward.setPath("privateBrdDetail.do?comm=privateBrdDetail&pbrdno="+pbrdno+"");
 		}	
 
 		return forward;
