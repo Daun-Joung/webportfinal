@@ -15,7 +15,11 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = (String) session.getAttribute("ID");
 
+	MystyleMainService mystylesrv = MystyleMainService.instance();
+	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
+	
 	List<BoardGetDTO> brddetail = (List<BoardGetDTO>)request.getAttribute("brddetail");
+	int pbrdno = Integer.parseInt(request.getParameter("pbrdno"));
 %>
 
 <!DOCTYPE html>
@@ -127,6 +131,10 @@
 					</ul>
 				</div>
 			</div>
+						
+		<%	
+		}
+		%>
 			<div class="detailfooter">
 				<div class="likeandreply">
 					<div class="like">
@@ -145,18 +153,25 @@
 							<img src ="../portimg/user.png">
 						</div>
 						<div class="replybox">
-							<input type="hidden" name="">
-							<textarea placeholder="댓글을 입력하세요" class="replycon"></textarea>
+							<input type="hidden" name="pbrdno" value="<%=pbrdno%>">
+							<input type="hidden" name="user_id" value="<%=id%>">
+							<%
+							for(int i=0;i<profilelist.size();i++){
+								%>
+								
+								<input type="hidden" name="user_img" value="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
+								
+								<%
+							}
+							%>
+							<textarea placeholder="댓글을 입력하세요" name = "replycon" class="replycon"></textarea>
 							<input type="submit" value="댓글 등록">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-			
-		<%	
-		}
-		%>
+
 		
 	</section>
 	<footer>
