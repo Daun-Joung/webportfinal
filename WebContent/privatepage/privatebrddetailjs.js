@@ -44,5 +44,58 @@ $(document).ready(function(){
 		
 	});
 	
+	$('#like').click(function(){
+
+		var likecount = $('#likecountchk').val();
+		
+		if(likecount == 0){
+			
+			$.ajax({
+			url:"prvbrdlikein.do?comm=prvbrdlikein",
+			type:"post",
+			data: { 
+				"user_id":$("#user_id").val(),
+				
+				"pbrdno":$("#pbrdno").val(),
+
+				},
+			
+			success :function onData(data){
+				location.reload();
+			},
+			error: function onError(error){
+				console.error(error);
+			}
+			
+		})
+			
+		}else{
+			
+			$.ajax({
+			url:"prvbrdlikedel.do?comm=prvbrdlikedel",
+			type:"post",
+			data: { 
+				"user_id":$("#user_id").val(),
+				
+				"pbrdno":$("#pbrdno").val(),
+
+				},
+			
+			success :function onData(data){
+				location.reload();
+			},
+			error: function onError(error){
+				console.error(error);
+			}
+			
+		})
+			
+		}
+		
+		
+		
+		
+	});
+	
 	
 });

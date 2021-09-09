@@ -28,14 +28,7 @@ public class PrivateBrdLikeAction implements Action{
 		dto.setUser_id(user_id);
 		
 		PrivateBrdLikeService pbls = PrivateBrdLikeService.instance();
-		int likecount = pbls.likeChk(dto);
-		
-		if(likecount == 0) {
-		
-			
-		}else {
-			
-		}
+		pbls.likeChk(dto);
 		
 		
 		return null;

@@ -1,7 +1,9 @@
 package svc;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import bean.PrivateBrdLikeDTO;
 import mybatis.SqlMapConfig;
 
 public class PrivateBrdLikeDelService {
@@ -14,7 +16,18 @@ public class PrivateBrdLikeDelService {
 	
 	SqlSessionFactory factory = SqlMapConfig.getSqlSession();
 	
-	public void likeDelete() {
+	public void likeDelete(PrivateBrdLikeDTO dto) {
+		
+		SqlSession sqlsession = factory.openSession();
+		int deleteresult = sqlsession.delete("likedel", dto);
+		
+		if(deleteresult > 0) {
+			sqlsession.commit();
+		}else {
+			sqlsession.rollback();
+		}
+		
+		sqlsession.close();
 		
 	}
 	

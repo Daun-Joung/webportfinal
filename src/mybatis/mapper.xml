@@ -100,4 +100,22 @@
 	
 	</insert>
 	
+	<insert id="brdlikein" parameterType="bean.PrivateBrdLikeDTO">
+	
+	insert into privatebrdlike_tbl values(#{user_id}, #{pbrdno});
+	
+	</insert>
+	
+	<select id ="privatebrdlike" parameterType="bean.PrivateBrdLikeDTO" resultType ="Integer">
+		
+	select count(*) from privatebrdlike_tbl where pbrdno = #{pbrdno} and user_id = #{user_id};
+	
+	</select>
+	
+	<delete id="likedel" parameterType="bean.PrivateBrdLikeDTO">
+	
+	delete from privatebrdlike_tbl where user_id=#{user_id} and pbrdno =#{pbrdno};
+	
+	</delete>
+	
 </mapper>

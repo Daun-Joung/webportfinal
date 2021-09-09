@@ -1,3 +1,5 @@
+<%@page import="bean.PrivateBrdLikeDTO"%>
+<%@page import="svc.PrivateBrdLikeChkService"%>
 <%@page import="bean.BoardGetDTO"%>
 <%@page import="bean.PrivateBrdDTO"%>
 <%@page import="svc.PrivateBrdSelService"%>
@@ -20,6 +22,14 @@
 	
 	List<BoardGetDTO> brddetail = (List<BoardGetDTO>)request.getAttribute("brddetail");
 	int pbrdno = Integer.parseInt(request.getParameter("pbrdno"));
+	
+	PrivateBrdLikeChkService pblcs = PrivateBrdLikeChkService.instance();
+	PrivateBrdLikeDTO dto = new PrivateBrdLikeDTO();
+	dto.setPbrdno(pbrdno);
+	dto.setUser_id(id);
+	
+	int likecount =  pblcs.likeCount(dto);
+	
 %>
 
 <!DOCTYPE html>
@@ -130,21 +140,33 @@
 						<li>신발사이즈: <%=brddetail.get(i).getUser_shoe() %></li>
 					</ul>
 				</div>
-			</div>
-						
+			</div>			
 		<%	
 		}
 		%>
 			<div class="detailfooter">
 				<div class="likeandreply">
-					<div class="like">
+					<div class="like" id="like">
+					
+					<%
+					if(likecount == 0){
+					%>	
 						<span><img src="../portimg/like.png"></span>
+					<%	
+					}else{
+					%>
+						<span><img src="../portimg/heart.png"></span>
+					<%	
+					}
+					%>
+						
 						<label>좋아요</label>
 					</div>
 					<div class="reply">
 						<span><img src="../portimg/message.png"></span>
 						<label>댓글달기</label>
 					</div>
+					<input type="hidden" id="likecountchk" value="<%=likecount%>">
 				</div>
 				<div class="replywrap">
 					<div class="printreply"></div>
@@ -156,9 +178,7 @@
 							<img src ="../privateProfileUpload/<%=profilelist.get(i).getUser_img()%>">
 						<%	
 						}
-						%>
-						
-							
+						%>			
 						</div>
 						<div class="replybox">
 							<input type="hidden" id= "user_id" value="<%=id%>" />

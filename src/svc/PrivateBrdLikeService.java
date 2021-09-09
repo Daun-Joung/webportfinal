@@ -16,16 +16,19 @@ public class PrivateBrdLikeService {
 	
 	SqlSessionFactory factory = SqlMapConfig.getSqlSession();
 	
-	public int likeChk(PrivateBrdLikeDTO dto) {
-		
-		int likecount;
+	public void likeChk(PrivateBrdLikeDTO dto) {
 		
 		SqlSession sqlsession = factory.openSession();
-		likecount = sqlsession.selectOne("privatebrdlike", dto);
+		int insertresult = sqlsession.insert("brdlikein", dto);
 		
+		if(insertresult>0) {
+			sqlsession.commit();
+		}else {
+			sqlsession.rollback();
+		}
+
 		sqlsession.close();
 		
-		return likecount;
 		
 	}
 	

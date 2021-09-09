@@ -20,6 +20,7 @@ import action.MagazineUpdateAction;
 import action.MagazineUpdateSelAction;
 import action.PrivateBrdDetailAction;
 import action.PrivateBrdLikeAction;
+import action.PrivateBrdLikeDelAction;
 import action.PrivateBrdRegiAction;
 import action.PrivateBrdReplyAction;
 import action.PrivateBrdReplyDelAction;
@@ -178,6 +179,15 @@ public class Controller extends HttpServlet{
 				
 				else if(comm.equals("prvbrdlikein")) {
 					inter = PrivateBrdLikeAction.insatnce();
+					try {
+						forward = inter.execute(request, response);
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				else if(comm.equals("prvbrdlikedel")) {
+					inter = PrivateBrdLikeDelAction.instance();
 					try {
 						forward = inter.execute(request, response);
 					}catch(Exception e) {
