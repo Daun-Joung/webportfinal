@@ -124,4 +124,23 @@
 	
 	</select>
 	
+	<select id="gettotalbrd" resultType="bean.BoardGetDTO">
+	
+	select 
+		privatebrd_tbl.pbrdno,
+ 	    privatebrd_tbl.user_id as id,
+   		privatebrd_tbl.pbrd_pic,
+   	 	privatebrd_tbl.pbrd_con,
+   	 	privatebrd_tbl.pbrd_date,
+    	privateinfo_tbl.user_weight,
+    	privateinfo_tbl.user_height,
+    	privateinfo_tbl.user_top,
+    	privateinfo_tbl.user_bottom,
+    	privateinfo_tbl.user_shoe,
+    	privateinfo_tbl.user_img
+	from privatebrd_tbl, privateinfo_tbl
+	where privateinfo_tbl.user_id = privatebrd_tbl.user_id;
+	
+	</select>
+	
 </mapper>

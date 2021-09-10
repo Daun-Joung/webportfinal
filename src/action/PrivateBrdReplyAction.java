@@ -21,9 +21,6 @@ public class PrivateBrdReplyAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		boolean isWriteSuccess= false;
-		ActionForward forward = null;
-
 		PrivateBrdReplyDTO dto = new PrivateBrdReplyDTO();
 		
 		String user_id = request.getParameter("user_id");
@@ -37,24 +34,9 @@ public class PrivateBrdReplyAction implements Action{
 		dto.setReply_con(reply_con);
 
 		PrivateBrdReplyService pbrs = PrivateBrdReplyService.instance();
-		isWriteSuccess = pbrs.setPrivateBrdReply(dto);
+		pbrs.setPrivateBrdReply(dto);
 		
-		if(!isWriteSuccess) {
-			response.setContentType("text/html;charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>");
-			out.println("alert('등록실패.')");
-			out.println("history.back();");
-			out.println("</script>");
-		}
-		
-		else{
-			forward = new ActionForward();
-			forward.setRedirect(true);
-			forward.setPath("privateBrdDetail.do?comm=privateBrdDetail&pbrdno="+pbrdno+"");
-		}	
-
-		return forward;
+		return null;
 	}
 
 }
