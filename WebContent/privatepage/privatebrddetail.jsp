@@ -169,7 +169,9 @@
 					<input type="hidden" id="likecountchk" value="<%=likecount%>">
 				</div>
 				<div class="replywrap">
-					<div class="printreply"></div>
+					<div class="printreply">
+					
+					</div>
 					<div class="replyin">
 						<div class="replypic">
 						<%
