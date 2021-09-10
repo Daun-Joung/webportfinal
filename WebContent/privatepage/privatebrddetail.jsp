@@ -1,3 +1,5 @@
+<%@page import="bean.PrivateBrdReplyDTO"%>
+<%@page import="svc.PrivateBrdReplySelService"%>
 <%@page import="bean.PrivateBrdLikeDTO"%>
 <%@page import="svc.PrivateBrdLikeChkService"%>
 <%@page import="bean.BoardGetDTO"%>
@@ -29,6 +31,12 @@
 	dto.setUser_id(id);
 	
 	int likecount =  pblcs.likeCount(dto);
+	
+	PrivateBrdReplySelService pbrss = PrivateBrdReplySelService.instance();
+	PrivateBrdReplyDTO vo = new PrivateBrdReplyDTO();
+	vo.setPbrdno(pbrdno);
+
+	List<PrivateBrdReplyDTO> replylist = pbrss.getReplyList(vo);
 	
 %>
 
@@ -169,9 +177,24 @@
 					<input type="hidden" id="likecountchk" value="<%=likecount%>">
 				</div>
 				<div class="replywrap">
+					<%
+						for(int i=0;i<replylist.size();i++){
+						%>
 					<div class="printreply">
+						<div class="replyprintpic">
+						
+							<img src ="../privateProfileUpload/<%=replylist.get(i).getUser_img()%>">
+						
+						</div>
+						<div class="replyprintbox">
+							<p><%=replylist.get(i).getUser_id() %></p>
+							<input type="text" name ="replyprint" id="replyprint" value="<%=replylist.get(i).getReply_con() %>" readonly>
+						</div>
 					
 					</div>
+						<%	
+						}
+						%>	
 					<div class="replyin">
 						<div class="replypic">
 						<%

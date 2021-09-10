@@ -118,4 +118,10 @@
 	
 	</delete>
 	
+	<select id ="privatebrdreplyget" parameterType = "bean.PrivateBrdReplyDTO" resultType = "bean.PrivateBrdReplyDTO">
+	
+	select * from privatebrdreply_tbl where pbrdno = #{pbrdno};
+	
+	</select>
+	
 </mapper>
