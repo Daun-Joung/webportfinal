@@ -24,13 +24,13 @@ $(document).ready(function(){
 			url:"privatebrdreply.do?comm=privatebrdreply",
 			type:"post",
 			data: { 
-				"user_id":$("#user_id").val(),
+				"user_id":$(this).prevAll("#user_id").val(),
 				
-				"pbrdno":$("#pbrdno").val(),
+				"pbrdno":$(this).prevAll("#pbrdno").val(),
 				
-				"reply_con":$("#reply_con").val(),
+				"reply_con":$(this).prevAll("#reply_con").val(),
 				
-				"user_img":$("#user_img").val()
+				"user_img":$(this).prevAll("#user_img").val()
 				},
 			
 			success :function onData(data){
@@ -46,7 +46,7 @@ $(document).ready(function(){
 	
 	$('#like').click(function(){
 
-		var likecount = $('#likecountchk').val();
+		var likecount = $(this).find('#likecountchk').val();
 		
 		if(likecount == 0){
 			

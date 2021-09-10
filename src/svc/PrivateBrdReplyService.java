@@ -17,22 +17,21 @@ public class PrivateBrdReplyService {
 	SqlSessionFactory factory = SqlMapConfig.getSqlSession();
 	
 	
-	public boolean setPrivateBrdReply (PrivateBrdReplyDTO dto) {
+	public void setPrivateBrdReply (PrivateBrdReplyDTO dto) {
 
-		boolean isWriteSuccess = false;
+		
 		SqlSession sqlsession = factory.openSession();
 		int insertCount = sqlsession.insert("privatebrdreply", dto);
 				
 		if(insertCount > 0){
 			sqlsession.commit();
-			isWriteSuccess = true;
 		}
 		else{
 			sqlsession.rollback();
 		}
 		
 		sqlsession.close();
-		return isWriteSuccess;	
+		
 		
 	}
 }

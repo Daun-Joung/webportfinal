@@ -22,6 +22,10 @@ String id = (String) session.getAttribute("ID");
 
 TotalBrdSelService tbss = TotalBrdSelService.instance();
 List<BoardGetDTO> totallist = tbss.getTotalBrd();
+
+MystyleMainService mystylesrv = MystyleMainService.instance();
+List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
+
 %>
 
 <!DOCTYPE html>
@@ -161,7 +165,7 @@ List<BoardGetDTO> totallist = tbss.getTotalBrd();
 						</div>
 					</div>
 					<%
-						PrivateBrdLikeChkService pblcs = PrivateBrdLikeChkService.instance();
+					PrivateBrdLikeChkService pblcs = PrivateBrdLikeChkService.instance();
 					PrivateBrdLikeDTO dto = new PrivateBrdLikeDTO();
 					dto.setPbrdno(totallist.get(i).getPbrdno());
 					dto.setUser_id(totallist.get(i).getId());
@@ -174,14 +178,13 @@ List<BoardGetDTO> totallist = tbss.getTotalBrd();
 
 					List<PrivateBrdReplyDTO> replylist = pbrss.getReplyList(vo);
 
-					MystyleMainService mystylesrv = MystyleMainService.instance();
-					List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
+					
 					%>
 
 					<div class="detailfooter">
 						<div class="likeandreply" id="likeandreply">
 							<div class="like" id="like">
-
+								
 								<%
 									if (likecount == 0) {
 								%>
@@ -199,7 +202,7 @@ List<BoardGetDTO> totallist = tbss.getTotalBrd();
 							<div class="reply">
 								<span><img src="../portimg/message.png"></span> <label>댓글달기</label>
 							</div>
-							<input type="hidden" id="likecountchk" value="<%=likecount%>">
+							
 						</div>
 						<div class="replywrap" id="replywrap">
 							<%
@@ -225,33 +228,32 @@ List<BoardGetDTO> totallist = tbss.getTotalBrd();
 							<div class="replyin" id="replyin">
 								<div class="replypic">
 									<%
-										for (int j = 0; j < profilelist.size(); j++) {
+										for (int k = 0; k < profilelist.size(); k++) {
 									%>
 									<img
-										src="../privateProfileUpload/<%=profilelist.get(j).getUser_img()%>">
-
+										src="../privateProfileUpload/<%=profilelist.get(k).getUser_img()%>">
+										<%
+									
+										}
+									%>
 								</div>
+								
+							
+								
 								<div class="replybox">
-									<input type="hidden" id="user_id"
-										value="<%=profilelist.get(j).getUser_id()%>" />
 									<%
+									for(int a=0; a < profilelist.size(); a++){
+										%>
+										
+									<input type="hidden" id="user_id" value="<%=profilelist.get(a).getUser_id()%>" />
+									<input type="hidden" id="user_img" value="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
+									<%	
 										}
 									%>
-
-									<input type="hidden" id="pbrdno"
-										value="<%=totallist.get(i).getPbrdno()%>" />
-									<%
-										for (int j = 0; j < profilelist.size(); j++) {
-									%>
-
-									<input type="hidden" id="user_img"
-										value="../privateProfileUpload/<%=profilelist.get(j).getUser_img()%>">
-
-									<%
-										}
-									%>
-									<textarea placeholder="댓글을 입력하세요" id="reply_con"></textarea>
-									<input type="button" value="댓글 등록" id="replyregibtn">
+									
+									<textarea placeholder="댓글을 입력하세요" id="reply_con" class="reply_con"></textarea>
+									<input type="hidden" id="pbrdno" class="pbrdno" value="<%=totallist.get(i).getPbrdno()%>" />
+									<input type="button" value="댓글 등록" id="replyregibtn" class="replyregibtn">
 								</div>
 							</div>
 						</div>
