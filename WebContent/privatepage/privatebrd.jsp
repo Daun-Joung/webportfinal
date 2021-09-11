@@ -85,7 +85,7 @@
 			
 		</div>
 		<div class="headermid">
-			<div class="mainlogo"><a href="../main/portmainfinal.jsp">Fit-in</a></div>
+			<div class="mainlogo"><a href="../main/portmainfinal.jsp">FIT-IN</a></div>
 		</div>
 		<div class="headerbot">
 			<div class="mainnav">
