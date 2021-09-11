@@ -11,12 +11,23 @@ $(document).ready(function(){
 		
 		if($('.replyin').css('display') === 'none'){
 			$('.replyin').css('display','inline-block');
-		}else{
+		}else {
 			$('.replyin').hide();
 		}
 		
+	});
+	
+	$('.headermenu img').click(function(){
+			event.stopPropagation();
+			$(this).next('.upanddel').css('display','inline-block')
 		
 	});
+	
+	$(document).click(function(){
+		
+			$('.upanddel').hide();
+	});
+	
 	
 	$('#replyregibtn').click(function(){
 		

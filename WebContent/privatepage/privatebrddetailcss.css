@@ -24,6 +24,7 @@ header div.headerbot { width: 980px; height: 30px; padding-top: 10px; margin-bot
 .mainnav li div input { border: 0 solid black; border-bottom: 1px solid black; }
 
 /* Layout - section */
+
 section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .detailwrap { width: 600px; height: auto; margin: 20px auto;  border: 0.2px #D5D5D5 solid;}
 .detailheader { width: 600px; height: auto;}
@@ -32,8 +33,9 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .user_pic img { width: 40px; height: 40px; border-radius: 70%; object-fit: cover; }
 .user_id { width:440px; height: 40px; float: left; font-size: 15pt; padding-top: 20px; margin-left: 30px;}
 .user_id:hover { text-decoration: underline; cursor: pointer;}
-.headermenu { width: 30px; heigth: 30px; float:right; padding:10px; margin-top: 10px; }
+.headermenu { width: 30px; heigth: 30px; float:right; padding:10px; margin-top: 10px; position: relative; }
 .headermenu img { width: 25px; height: 25px; }
+.headermenu img:hover { cursor: pointer;}
 .detailsection { width: 600px; height: auto; }
 .pbrd_pic { width: 600px; height: auto;}
 .pbrd_pic img { width:600px; height: 600px; object-fit: cover; }
@@ -51,6 +53,12 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .reply:hover { background-color: #D5D5D5; cursor: pointer;}
 .reply span img { width: 20px; height: 20px; }
 .reply label { display: inline-block; margin-left: 5px;}
+
+.upanddel { width: 100px; height: 100px; position: absolute; right: 10px; top: 30px; display: none;}
+.upanddel ul { width: 100px; height: 80px; border: 0.2px #D5D5D5 solid; padding-top: 20px; background-color: white;}
+.upanddel ul li { width: 100px; height: 30px; text-align: center; }
+.upanddel ul li label { display:inline-block; width: 100px; height: 23px; padding-top: 7px;}
+.upanddel ul li label:hover{ background-color: black; color: white; cursor: pointer;}
 
 .replywrap { width: 600px; height: auto;}
 

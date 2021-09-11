@@ -130,6 +130,12 @@
 					<div class="user_id"> <%=brddetail.get(i).getId()%></div>
 					<div class="headermenu">
 						<img src="../portimg/menu.png">
+						<div class="upanddel">
+							<ul>
+								<li><a href="#"><label>수정</label></a></li>
+								<li><a href="#"><label>삭제</label></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
