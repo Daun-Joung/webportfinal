@@ -132,8 +132,8 @@
 						<img src="../portimg/menu.png">
 						<div class="upanddel">
 							<ul>
-								<li><a href="#"><label>수정</label></a></li>
-								<li><a href="#"><label>삭제</label></a></li>
+								<li><label id="privatebrdupdate">수정</label></li>
+								<li><a href="privatebrdtotaldel.do?comm=privatebrdtotaldel&pbrdno=<%=pbrdno%>&user_id=<%=brddetail.get(i).getId()%>"><label id="privatebrddel">삭제</label></a> </li>
 							</ul>
 						</div>
 					</div>

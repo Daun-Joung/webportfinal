@@ -143,4 +143,22 @@
 	
 	</select>
 	
+	<delete id="privatebrddel" parameterType = "bean.PrivateBrdDTO">
+	
+	delete from privatebrd_tbl where pbrdno=#{pbrdno};
+	
+	</delete>
+	
+	<delete id="privatebrdreplydel" parameterType = "bean.PrivateBrdDTO">
+	
+	delete from privatebrdreply_tbl where pbrdno = #{pbrdno};
+	
+	</delete>
+	
+	<delete id="privatebrdlikedel" parameterType="bean.PrivateBrdDTO">
+	
+	delete from privatebrdlike_tbl where user_id=#{user_id} and pbrdno =#{pbrdno};
+	
+	</delete>
+	
 </mapper>

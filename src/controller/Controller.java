@@ -18,6 +18,7 @@ import action.MagazineDetailAction;
 import action.MagazineListAction;
 import action.MagazineUpdateAction;
 import action.MagazineUpdateSelAction;
+import action.PrivateBrdDelAction;
 import action.PrivateBrdDetailAction;
 import action.PrivateBrdLikeAction;
 import action.PrivateBrdLikeDelAction;
@@ -193,6 +194,25 @@ public class Controller extends HttpServlet{
 					}catch(Exception e) {
 						e.printStackTrace();
 					}
+				}
+				
+				else if(comm.equals("privatebrddel")) {
+					inter = PrivateBrdLikeDelAction.instance();
+					try {
+						forward = inter.execute(request, response);
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				else if(comm.equals("privatebrdtotaldel")) {
+					inter = PrivateBrdDelAction.instance();
+					try {
+						forward = inter.execute(request, response);
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					
 				}
 				
 				if(forward != null){

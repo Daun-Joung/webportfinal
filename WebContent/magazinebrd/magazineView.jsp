@@ -94,7 +94,7 @@
 				</div>
 				<div class="headermid">
 					<div class="mainlogo">
-						<a href="../main/portmainfinal.jsp">Fit-in</a>
+						<a href="../main/portmainfinal.jsp">FIT-IN</a>
 					</div>
 				</div>
 				<div class="headerbot">
