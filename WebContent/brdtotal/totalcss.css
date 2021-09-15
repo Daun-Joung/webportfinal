@@ -68,11 +68,6 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .replyprintbox { width: 400px; padding: 20px 10px 20px 15px; height: auto; float: left; background-color: #D5D5D5; border-radius: 10px; }
 .replyprintbox input[type="text"]{ width: 390px; height: auto; border: none; outline: none; background-color: #D5D5D5; overflow: hidden;}
 
-
-
-
-
-
 /* Layout - footer */
 
 footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
