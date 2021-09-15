@@ -105,10 +105,10 @@
 						<input type="text" name="mktbdtitle" id ="producttitle" placeholder="제목을 입력하세요">
 					</div>
 					<div class="pricewrap">
-						<input type="text" name="mktbdtitle" id ="producttitle" placeholder="가격을 입력하세요">
+						<input type="text" name="mktbdprice" id ="producttitle" placeholder="가격을 입력하세요">
 					</div>
 					<div class="conwrap">
-						<textarea name="productcon" id="mktbdcon" placeholder="내용을 입력하세요"></textarea>
+						<textarea name="mktbdcon" id="mktbdcon" placeholder="내용을 입력하세요"></textarea>
 					</div>
 				</div>
 					<div class = "doublebtn">
@@ -116,7 +116,7 @@
 					<label for="input-file" class="inputfile">
 						사진 업로드
 					</label>
-					<input type="file" name="user_img" id="input-file" accept="image/*" onchange="preview(event);" style="display:none;">
+					<input type="file" name="mktbdimg" id="input-file" accept="image/*" onchange="preview(event);" style="display:none;">
 				</div>
 			
 				<div class="bodysizeregibtn">

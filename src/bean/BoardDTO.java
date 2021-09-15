@@ -8,6 +8,13 @@ public class BoardDTO {
 	int mktbdprice;
 	String mktbdcon;
 	String mktbddate;
+	String mktbdimg;
+	public String getMktbdimg() {
+		return mktbdimg;
+	}
+	public void setMktbdimg(String mktbdimg) {
+		this.mktbdimg = mktbdimg;
+	}
 	public int getMktbdno() {
 		return mktbdno;
 	}

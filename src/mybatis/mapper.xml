@@ -161,4 +161,16 @@
 	
 	</delete>
 	
+	<insert id ="marketbrdregi" parameterType ="bean.BoardDTO">
+	
+	insert into market_tbl values(default, #{user_id}, #{mktbdtitle}, #{mktbdprice}, #{mktbdcon}, now(), #{mktbdimg});
+	
+	</insert>
+	
+	<select id ="marketbrdget" resultType="bean.BoardDTO">
+	
+	select * from market_tbl;
+	
+	</select>
+	
 </mapper>

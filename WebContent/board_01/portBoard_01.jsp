@@ -1,3 +1,5 @@
+<%@page import="bean.BoardDTO"%>
+<%@page import="svc.MarketGetService"%>
 <%@page import="svc.MagazineMainService"%>
 <%@page import="bean.MagazineDTO"%>
 <%@page import="java.util.List"%>
@@ -10,9 +12,9 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = (String) session.getAttribute("ID");
 
- 	MagazineMainService srv = MagazineMainService.instance();
-	List<MagazineDTO> mainlist = srv.mainSelect();
-	
+ 	MarketGetService mkgs = MarketGetService.instance();
+ 	List<BoardDTO> marketlist = mkgs.marketSelect();
+ 	
 %>
 
 <!DOCTYPE html>
@@ -98,35 +100,24 @@
 	<section>
 		<div class="marketwrap">
 		<div class="plusbtn"><a href="../board_01/boardregi.jsp"><img src = "../portimg/plus.png"></a></div>
-			<ul>	
-				<li>			
+			<ul>
+			
+			<%for(int i=0;i<marketlist.size();i++){
+				%>
+				
+			<li>			
 					<div class="productwrap">
-						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
-						<div class="producttitle"> 제목 </div>
-						<div class="productprice"> 가격: 150000 </div>
+						<div class="productpic"> <img src="../boardUpload/<%=marketlist.get(i).getMktbdimg()%>"> </div>
+						<div class="producttitle"> <%=marketlist.get(i).getMktbdtitle() %> </div>
+						<div class="productprice"> 가격: <%=marketlist.get(i).getMktbdprice()%>원 </div>
 					</div>
 				</li>
-				<li>			
-					<div class="productwrap">
-						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
-						<div class="producttitle"> 제목 </div>
-						<div class="productprice"> 가격: 150000 </div>
-					</div>
-				</li>
-				<li>			
-					<div class="productwrap">
-						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
-						<div class="producttitle"> 제목 </div>
-						<div class="productprice"> 가격: 150000 </div>
-					</div>
-				</li>
-				<li>			
-					<div class="productwrap">
-						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
-						<div class="producttitle"> 제목 </div>
-						<div class="productprice"> 가격: 150000 </div>
-					</div>
-				</li>
+				
+			<%	
+			}
+			%>	
+				
+			
 			</ul>
 		</div>
 	</section>
