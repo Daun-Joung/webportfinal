@@ -10,8 +10,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = (String) session.getAttribute("ID");
 
- 	MagazineMainService srv = MagazineMainService.instance();
-	List<MagazineDTO> mainlist = srv.mainSelect();
+ 
 	
 %>
 
@@ -27,14 +26,14 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Paytone+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="privateinforegicss.css">
+	<link rel="stylesheet" type="text/css" href="boardregicss.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<script src="privateinforegijs.js"></script>
+	<script src="boardregijs.js"></script>
 	
 </head>
 
 <body>
-	<form action="privateInfoRegi.do?comm=privateInfoRegi" method="post" enctype="multipart/form-data">
+	<form action="mktbdregi.do?comm=mktbdregi" method="post" enctype="multipart/form-data">
 	<div class="wrap">
 	<div class="headerwrap">
 		<header>
@@ -97,10 +96,22 @@
 				<div class="imgup">
 					<img src="http://placehold.it/350x350" id="imgup">
 				</div>
-				
+		
 			</div>
 			<div class="bodysize">
-			<div class = "doublebtn">
+			
+				<div class="productinfo">
+					<div class="titlewrap">
+						<input type="text" name="mktbdtitle" id ="producttitle" placeholder="제목을 입력하세요">
+					</div>
+					<div class="pricewrap">
+						<input type="text" name="mktbdtitle" id ="producttitle" placeholder="가격을 입력하세요">
+					</div>
+					<div class="conwrap">
+						<textarea name="productcon" id="mktbdcon" placeholder="내용을 입력하세요"></textarea>
+					</div>
+				</div>
+					<div class = "doublebtn">
 				<div class="imgupbtn">
 					<label for="input-file" class="inputfile">
 						사진 업로드
@@ -109,29 +120,10 @@
 				</div>
 			
 				<div class="bodysizeregibtn">
-					<input type="submit" name="profilein" id ="profilein" value="프로필 등록">
+					<input type="submit" name="profilein" id ="profilein" value="상품 등록">
 					<input type="hidden" name="user_id" value="<%=id%>">
 				</div>
-			</div>
-				<div class="bodysizetext">
-					<ul>
-						<li>몸무게</li>
-						<li>키</li>
-						<li>상의사이즈</li>
-						<li>하의사이즈</li>
-						<li>신발사이즈</li>
-					</ul>
 				</div>
-				<div class="bodysizenum">
-					<ul>
-						<li><input type ="text" name="user_weight"></li>
-						<li><input type ="text" name="user_height"></li>
-						<li><input type ="text" name="user_top"></li>
-						<li><input type ="text" name="user_bottom"></li>
-						<li><input type ="text" name="user_shoe"></li>
-					</ul>
-				</div>
-				
 			</div>
 			</div>
 		</div>

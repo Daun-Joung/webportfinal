@@ -97,6 +97,7 @@
 	</div>
 	<section>
 		<div class="marketwrap">
+		<div class="plusbtn"><a href="../board_01/boardregi.jsp"><img src = "../portimg/plus.png"></a></div>
 			<ul>	
 				<li>			
 					<div class="productwrap">
@@ -104,7 +105,28 @@
 						<div class="producttitle"> 제목 </div>
 						<div class="productprice"> 가격: 150000 </div>
 					</div>
-				</li>	
+				</li>
+				<li>			
+					<div class="productwrap">
+						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
+						<div class="producttitle"> 제목 </div>
+						<div class="productprice"> 가격: 150000 </div>
+					</div>
+				</li>
+				<li>			
+					<div class="productwrap">
+						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
+						<div class="producttitle"> 제목 </div>
+						<div class="productprice"> 가격: 150000 </div>
+					</div>
+				</li>
+				<li>			
+					<div class="productwrap">
+						<div class="productpic"> <img src="http://placehold.it/200x200"> </div>
+						<div class="producttitle"> 제목 </div>
+						<div class="productprice"> 가격: 150000 </div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</section>
