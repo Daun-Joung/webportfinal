@@ -40,8 +40,8 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .criteria_01 { width: 80px; height: 40px; float: left; border:none; margin-right: 10px; padding-left: 10px;}
 .criteria_02 { width: 80px; height: 40px; float: left; margin-right: 30px; border:none; padding-left: 10px; }
 .searchboxwrap input[type="text"]{ width: 400px; height: 40px; float: left; border:none; padding-left: 20px; }
-.searchbtnwrap input[type="button"]{ width: 70px; height: 40px; position: absolute; left: 665px; border: none; background-color: black; color: white;}
-.searchbtnwrap input[type="button"]:hover { cursor: pointer; }
+.searchbtnwrap input[type="submit"]{ width: 70px; height: 40px; position: absolute; left: 660px; border: none; background-color: black; color: white;}
+.searchbtnwrap input[type="submit"]:hover { cursor: pointer; }
 
 /* Layout - footer */
 footer{ width: 100%; height: 200px; border-top: 2px gray solid;}

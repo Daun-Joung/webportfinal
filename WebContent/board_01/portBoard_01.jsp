@@ -51,7 +51,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 </head>
 
 <body>
-	<form>
+	<form action="mktbdsearch.do?comm=mktbdsearch" method="post">
 		<div class="wrap">
 			<div class="headerwrap">
 				<header>
@@ -146,17 +146,17 @@ DecimalFormat df = new DecimalFormat("###,###");
 									가격:
 									<%=df.format(marketlist.get(i).getMktbdprice())%>원
 								</div>
-
+									
 							</div>
 						</li>
-
+						
 						<%
 							}
 						%>
 					</ul>
 
 					<div class="productsearch">
-						<select name="crieeria_01" class="criteria_01">
+						<select name="criteria_01" class="criteria_01">
 							<option value="1">작성자</option>
 							<option value="2">제목</option>
 						</select> 
@@ -169,10 +169,9 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<input type="text" name="searchbox" placeholder="검색어를 입력하세요">
 						</div>
 						<div class="searchbtnwrap">
-							<input type="button" name="searchbtn" value="검색">
+							<input type="submit" name="searchbtn" value="검색">
 						</div>
 					</div>
-
 				</div>
 			</section>
 			<footer>
