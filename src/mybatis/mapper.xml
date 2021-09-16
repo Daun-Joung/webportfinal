@@ -173,4 +173,16 @@
 	
 	</select>
 	
+	<select id="marketidsrch" resultType="bean.BoardDTO">
+	
+	select * from market_tbl where mktbddate between date(now())-#{criteria_02} and date(now()) and user_id like CONCAT('%',#{srchword},'%');
+
+	</select>
+	
+	<select id="markettitlesrch" resultType="bean.BoardDTO">
+	
+	select * from market_tbl where mktbddate between date(now())-#{criteria_02} and date(now()) and mktbdtitle like CONCAT('%',#{srchword},'%');
+	
+	</select>
+	
 </mapper>

@@ -122,10 +122,17 @@ DecimalFormat df = new DecimalFormat("###,###");
 			</div>
 			<section>
 				<div class="marketwrap">
-					<div class="plusbtn">
+					<%
+					if(id != null){
+						%>
+						<div class="plusbtn">
 						<a href="../board_01/boardregi.jsp"><img
 							src="../portimg/plus.png"></a>
 					</div>
+					<%
+					}
+					%>
+					
 					<ul>
 
 						<%
@@ -161,9 +168,10 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<option value="2">제목</option>
 						</select> 
 						<select name="criteria_02" class="criteria_02">
-							<option value="3">오늘</option>
-							<option value="4">1주일</option>
-							<option value="5">1달</option>
+							<option value="0">전체</option>
+							<option value="1">오늘</option>
+							<option value="7">1주일</option>
+							<option value="30">1달</option>
 						</select>
 						<div class="searchboxwrap">
 							<input type="text" name="searchbox" placeholder="검색어를 입력하세요">

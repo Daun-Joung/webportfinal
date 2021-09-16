@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import bean.BoardDTO;
+import bean.BoardSrchDTO;
 import mybatis.SqlMapConfig;
 
 public class MarketSearchService {
@@ -19,16 +20,18 @@ public class MarketSearchService {
 	
 	SqlSessionFactory factory = SqlMapConfig.getSqlSession();
 	
-	public List<BoardDTO> getMarketSearchList(int criteria_01, int criteria_02, String searchbox){
+	public List<BoardDTO> getMarketSearchList(BoardSrchDTO dto){
 		
 		List<BoardDTO> searchlist = new ArrayList<BoardDTO>();
 		
 		SqlSession sqlsession = factory.openSession();
 		
-		if( criteria_01 == 1) {
-		   searchlist = sqlsession.selectList(arg0, arg1);
-		}else {
-		   searchlist = sqlsession.selectList(arg0, arg1);
+		
+		
+		if( dto.getCriteria_01() == 1) {
+		   searchlist = sqlsession.selectList("marketidsrch", dto);
+		}else if( dto.getCriteria_01() == 2){
+		   searchlist = sqlsession.selectList("markettitlesrch", dto);
 		}
 		
 		

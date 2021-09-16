@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.ActionForward;
 import bean.BoardDTO;
+import bean.BoardSrchDTO;
 import svc.MarketSearchService;
 
 public class MarketSearchAction implements Action{
@@ -26,13 +27,18 @@ public class MarketSearchAction implements Action{
 		int criteria_02 = Integer.parseInt(request.getParameter("criteria_02"));
 		String searchbox = request.getParameter("searchbox");
 		
+		BoardSrchDTO dto = new BoardSrchDTO();
+		dto.setSrchword(searchbox);
+		dto.setCriteria_01(criteria_01);
+		dto.setCriteria_02(criteria_02);
+		
 		MarketSearchService mss = new MarketSearchService();
-		List<BoardDTO> searchlist = mss.getMarketSearchList(criteria_01,criteria_02,searchbox);
+		List<BoardDTO> searchlist = mss.getMarketSearchList(dto);
 		
 		request.setAttribute("searchlist", searchlist);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath(string);	
+		forward.setPath("../board_01/portBoardSrch.jsp");	
 		
 		return forward;
 	}

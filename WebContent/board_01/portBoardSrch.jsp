@@ -15,8 +15,7 @@
 	request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("ID");
 
-MarketGetService mkgs = MarketGetService.instance();
-List<BoardDTO> marketlist = mkgs.marketSelect();
+List<BoardDTO> searchlist = (List<BoardDTO>)request.getAttribute("searchlist");
 
 DecimalFormat df = new DecimalFormat("###,###");
 %>
@@ -51,7 +50,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 </head>
 
 <body>
-	<form>
+	<form action="mktbdsearch.do?comm=mktbdsearch" method="post">
 		<div class="wrap">
 			<div class="headerwrap">
 				<header>
@@ -129,7 +128,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 					<ul>
 
 						<%
-							for (int i = 0; i < marketlist.size(); i++) {
+							for (int i = 0; i < searchlist.size(); i++) {
 						%>
 
 						<li>
@@ -137,14 +136,14 @@ DecimalFormat df = new DecimalFormat("###,###");
 
 								<div class="productpic">
 									<a href="#"><img
-										src="../boardUpload/<%=marketlist.get(i).getMktbdimg()%>"></a>
+										src="../boardUpload/<%=searchlist.get(i).getMktbdimg()%>"></a>
 								</div>
 								<div class="producttitle">
-									<a href="#"><%=marketlist.get(i).getMktbdtitle()%></a>
+									<a href="#"><%=searchlist.get(i).getMktbdtitle()%></a>
 								</div>
 								<div class="productprice">
 									가격:
-									<%=df.format(marketlist.get(i).getMktbdprice())%>원
+									<%=df.format(searchlist.get(i).getMktbdprice())%>원
 								</div>
 
 							</div>
@@ -161,9 +160,10 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<option value="2">제목</option>
 						</select> 
 						<select name="criteria_02" class="criteria_02">
-							<option value="3">오늘</option>
-							<option value="4">1주일</option>
-							<option value="5">1달</option>
+							<option value="0">전체</option>
+							<option value="1">오늘</option>
+							<option value="7">1주일</option>
+							<option value="30">1달</option>
 						</select>
 						<div class="searchboxwrap">
 							<input type="text" name="searchbox" placeholder="검색어를 입력하세요">
