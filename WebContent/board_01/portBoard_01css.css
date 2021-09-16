@@ -32,8 +32,16 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .marketwrap ul li { display: inline-block; margin: 10px 20px;  }
 
 .productpic img { width: 200px; height: 200px; object-fit: cover; border-radius: 10px; }
-.producttitle { font-weight: bold; font-size: 15pt; }
+.producttitle { display: block; font-weight: bold; font-size: 15pt;  width: 200px; height: 24px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;  }
+.producttitle:hover { text-decoration: underline; }
 .productprice { color: gray; }
+
+.productsearch { width: 700px; heigth: auto; margin-left: 20px; display: inline-block; background-color: #EFEFEF; padding: 20px; border-radius: 10px; }
+.criteria_01 { width: 80px; height: 40px; float: left; border:none; margin-right: 10px; padding-left: 10px;}
+.criteria_02 { width: 80px; height: 40px; float: left; margin-right: 30px; border:none; padding-left: 10px; }
+.searchboxwrap input[type="text"]{ width: 400px; height: 40px; float: left; border:none; padding-left: 20px; }
+.searchbtnwrap input[type="button"]{ width: 70px; height: 40px; position: absolute; left: 665px; border: none; background-color: black; color: white;}
+.searchbtnwrap input[type="button"]:hover { cursor: pointer; }
 
 /* Layout - footer */
 footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
