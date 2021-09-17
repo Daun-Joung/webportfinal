@@ -31,12 +31,13 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .detailpic img { width: 600px; height: 600px; border-radius: 10px; object-fit: cover;}
 .userinfo { width: 600px; height: auto; padding: 10px 0px; border-bottom: 0.2px #D5D5D5 solid; display: inline-block;}
 .userpic { width: 50px; height: 50px; padding: 10px; float: left; margin-right: 10px; }
-.userpic img { width: 40px; height: 40px; object-fit: cover;}
+.userpic img { width: 40px; height: 40px; border-radius: 70%; object-fit: cover;}
 .userinfowrap {  width: 500px; height: 50px; float: left; padding-top: 10px;}
 .user_id { font-size: 15pt; font-weight: bold;}
 .postdate { color: gray; }
-.detailmain { width: 600px; height: auto;}
-.contitle { font-size: 20pt; font-weight: bold;}
+.detailmain { width: 600px; height: auto; margin: 20px 0px;}
+.contitle { font-size: 18pt; font-weight: bold;}
+.productprice { font-size: 15pt;}
 
 /* Layout - footer */
 footer{ width: 100%; height: 200px; border-top: 2px gray solid;}

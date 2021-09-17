@@ -9,6 +9,13 @@ public class BoardDTO {
 	String mktbdcon;
 	String mktbddate;
 	String mktbdimg;
+	String user_img;
+	public String getUser_img() {
+		return user_img;
+	}
+	public void setUser_img(String user_img) {
+		this.user_img = user_img;
+	}
 	public String getMktbdimg() {
 		return mktbdimg;
 	}

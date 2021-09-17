@@ -187,7 +187,17 @@
 	
 	<select id="marketdetail" parameterType ="bean.BoardDTO" resultType="bean.BoardDTO">
 	
-	select * from market_tbl where mktbdno = #{mktbdno} ;
+	select 
+	mktbdno,
+	market_tbl.user_id,
+	mktbdtitle,
+	mktbdprice,
+	mktbdcon,
+	mktbddate,
+	mktbdimg,
+	privateinfo_tbl.user_img
+	from market_tbl, privateinfo_tbl
+	where market_tbl.user_id = privateinfo_tbl.user_id and market_tbl.mktbdno = #{mktbdno};
 	
 	</select>
 	

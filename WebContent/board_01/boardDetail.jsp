@@ -128,7 +128,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 					</div>
 					<div class="userinfo">
 						<div class="userpic">
-							<img src = "../portimg/user.png">
+							<img src = "../privateProfileUpload/<%=detaillist.get(i).getUser_img()%>">
 						</div>
 						<div class="userinfowrap">
 							<div class="user_id"><%=detaillist.get(i).getUser_id() %></div>
@@ -140,10 +140,12 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<%=detaillist.get(i).getMktbdtitle()%>
 						</div>
 						<div class="productprice">
-							df.format<%=detaillist.get(i).getMktbdprice()%>
+							<%=df.format(detaillist.get(i).getMktbdprice())%>원
 						</div>
 					</div>
-					<div class="detailcon"></div>
+					<div class="detailcon">
+						<%=detaillist.get(i).getMktbdcon() %>
+					</div>
 				<%	
 				}
 				%>
