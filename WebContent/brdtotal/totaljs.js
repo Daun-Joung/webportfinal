@@ -92,10 +92,20 @@ $(document).ready(function(){
 			
 		}
 		
+	});
+	
 		
-		
+	$('.headermenu img').click(function(){
+			event.stopPropagation();
+			$(this).next('.upanddel').css('display','inline-block')
 		
 	});
+	
+	$(document).click(function(){
+		
+			$('.upanddel').hide();
+	});
+	
 	
 	
 });

@@ -17,7 +17,8 @@
 %>
 
 <%
-	request.setCharacterEncoding("UTF-8");
+
+request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("ID");
 
 TotalBrdSelService tbss = TotalBrdSelService.instance();
@@ -132,6 +133,7 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 				%>
 
 				<div class="detailwrap">
+				
 					<div class="detailheader">
 						<div class="detailheaderwrap">
 							<div class="user_pic">
@@ -140,9 +142,14 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 							</div>
 							<div class="user_id">
 								<%=totallist.get(i).getId()%></div>
-							<div class="headermenu">
-								<img src="../portimg/menu.png">
-							</div>
+								<div class="headermenu">
+						<img src="../portimg/menu.png">
+						<div class="upanddel">
+							<ul>
+								<li><label id="privatebrdupdate">신고하기</label></li>
+							</ul>
+						</div>
+					</div>
 						</div>
 					</div>
 					<div class="detailsection">
@@ -176,9 +183,7 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 					PrivateBrdReplyDTO vo = new PrivateBrdReplyDTO();
 					vo.setPbrdno(totallist.get(i).getPbrdno());
 
-					List<PrivateBrdReplyDTO> replylist = pbrss.getReplyList(vo);
-
-					
+					List<PrivateBrdReplyDTO> replylist = pbrss.getReplyList(vo);		
 					%>
 
 					<div class="detailfooter">
@@ -201,8 +206,7 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 							</div>
 							<div class="reply">
 								<span><img src="../portimg/message.png"></span> <label>댓글달기</label>
-							</div>
-							
+							</div>					
 						</div>
 						<div class="replywrap" id="replywrap">
 							<%

@@ -18,6 +18,7 @@ import action.MagazineDetailAction;
 import action.MagazineListAction;
 import action.MagazineUpdateAction;
 import action.MagazineUpdateSelAction;
+import action.MarketDetailAction;
 import action.MarketRegiAction;
 import action.MarketSearchAction;
 import action.PrivateBrdDelAction;
@@ -245,6 +246,15 @@ public class Controller extends HttpServlet{
 						e.printStackTrace();
 					}
 					
+				}
+				
+				else if(comm.equals("marketdetail")) {
+					inter = MarketDetailAction.instance();
+					try {
+						forward = inter.execute(request, response);
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 				
 				if(forward != null){

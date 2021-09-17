@@ -100,9 +100,9 @@
 				<div class="headerbot">
 					<div class="mainnav">
 						<ul>
-							<li><a href="#">HOME</a></li>
-							<li><a href="#">MYSTYLE</a></li>
-							<li><a href="#">PEOPLE</a></li>
+							<li><a href="../main/portmainfinal.jsp">HOME</a></li>
+							<li><a href="../privatepage/privatebrd.jsp">MYSTYLE</a></li>
+							<li><a href="../brdtotal/total.jsp">PEOPLE</a></li>
 							<li><a href="magazinelist.do?comm=magazineList">MAGAZINE</a></li>
 							<li><a href="../board_01/portBoard_01.jsp">MARKET</a></li>
 						</ul>

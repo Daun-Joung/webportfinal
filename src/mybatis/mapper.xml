@@ -185,4 +185,10 @@
 	
 	</select>
 	
+	<select id="marketdetail" parameterType ="bean.BoardDTO" resultType="bean.BoardDTO">
+	
+	select * from market_tbl where mktbdno = #{mktbdno} ;
+	
+	</select>
+	
 </mapper>

@@ -143,11 +143,11 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<div class="productwrap">
 
 								<div class="productpic">
-									<a href="#"><img
+									<a href="marketdetail.do?comm=marketdetail&mktbdno=<%=marketlist.get(i).getMktbdno()%>"><img
 										src="../boardUpload/<%=marketlist.get(i).getMktbdimg()%>"></a>
 								</div>
 								<div class="producttitle">
-									<a href="#"><%=marketlist.get(i).getMktbdtitle()%></a>
+									<a href="marketdetail.do?comm=marketdetail&mktbdno=<%=marketlist.get(i).getMktbdno()%>"><%=marketlist.get(i).getMktbdtitle()%></a>
 								</div>
 								<div class="productprice">
 									가격:

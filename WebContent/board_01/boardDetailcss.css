@@ -1,0 +1,49 @@
+
+
+/* Layout */
+* { padding: 0px; margin: 0px; }
+.wrap { height: 100%; margin: 0px auto; }
+ul { list-style: none; }
+a { text-decoration: none; color: black; }
+
+/* Layout - header */
+.headerwrap { width: 100%; border-bottom: 1px gray solid;}
+header { width: 980px; height: 230px; margin: 0px auto;}
+header div.headertop { width: 980px; height: 30px; margin-bottom: 10px; margin-top: 10px; }
+header div.headermid { width: 980px; height: 120px; margin-bottom: 10px; text-align: center; font-weight: bold; font-size: 70pt;}
+header div.headerbot { width: 980px; height: 30px; padding-top: 10px; margin-bottom: 10px; text-align: center; font-size: 15pt; }
+
+.mainlogo {font-family: 'Paytone One', sans-serif;}
+.regi { float: right; font-size: 15pt;}
+.regi li { display: inline; }
+.regi ul li a:hover{ text-decoration: underline; }
+.snsnav li { display: inline; margin-right: 20px; float: left;}
+.mainnav ul { width: 980px; }
+.mainnav ul li { display: inline; margin-right: 40px;}
+.mainnav li a:hover{ color: red;}
+.mainnav li div input { border: 0 solid black; border-bottom: 1px solid black; }
+
+/* Layout - section */
+section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
+
+.detailwrap { width: 600px; height: auto; margin: 20px auto; }
+.detailpic { width: 600px; height: auto;  }
+.detailpic img { width: 600px; height: 600px; border-radius: 10px; object-fit: cover;}
+.userinfo { width: 600px; height: auto; padding: 10px 0px; border-bottom: 0.2px #D5D5D5 solid; display: inline-block;}
+.userpic { width: 50px; height: 50px; padding: 10px; float: left; margin-right: 10px; }
+.userpic img { width: 40px; height: 40px; object-fit: cover;}
+.userinfowrap {  width: 500px; height: 50px; float: left; padding-top: 10px;}
+.user_id { font-size: 15pt; font-weight: bold;}
+.postdate { color: gray; }
+.detailmain { width: 600px; height: auto;}
+.contitle { font-size: 20pt; font-weight: bold;}
+
+/* Layout - footer */
+footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
+.footerwrap { width: 980px; height: 100%; margin: 20px auto;}
+.footerlogo { font-family: 'Paytone One', sans-serif; border-right: 1px gray solid; padding-right: 30px; font-size: 20pt;}
+.footeradd { margin-left: 30px; font-size: 15pt;}
+.footerwrap ul li{ display: inline;}
+.footerinfo { float: right; padding-top: 10px; font-size: 15pt;}
+
+
