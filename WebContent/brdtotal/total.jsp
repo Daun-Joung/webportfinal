@@ -117,7 +117,7 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 							<ul>
 								<li><a href="../main/portmainfinal.jsp">HOME</a></li>
 								<li><a href="../privatepage/privatebrd.jsp">MYSTYLE</a></li>
-								<li><a href="total.jsp">PEOPLE</a></li>
+								<li><a href="../brdtotal/total.jsp">PEOPLE</a></li>
 								<li><a href="magazineList.do?comm=magazineList">MAGAZINE</a></li>
 								<li><a href="../board_01/portBoard_01.jsp">MARKET</a></li>
 							</ul>
@@ -141,7 +141,8 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 									src="../privateProfileUpload/<%=totallist.get(i).getUser_img()%>">
 							</div>
 							<div class="user_id">
-								<%=totallist.get(i).getId()%></div>
+								<a href="../memberBrd/memberbrd.jsp?user_id=<%=totallist.get(i).getId()%>">  <%=totallist.get(i).getId()%> </a>
+							</div>
 								<div class="headermenu">
 						<img src="../portimg/menu.png">
 						<div class="upanddel">

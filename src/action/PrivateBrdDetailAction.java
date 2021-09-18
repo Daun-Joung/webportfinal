@@ -33,7 +33,7 @@ public class PrivateBrdDetailAction implements Action{
 		
 		ActionForward forward = new ActionForward();
 		request.setAttribute("brddetail", brddetail);
-		forward.setPath("privatebrddetail.jsp");
+		forward.setPath("../privatepage/privatebrddetail.jsp");
 		
 		return forward;
 	}

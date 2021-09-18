@@ -14,9 +14,6 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = (String) session.getAttribute("ID");
 
- 	MagazineMainService srv = MagazineMainService.instance();
-	List<MagazineDTO> mainlist = srv.mainSelect();
-	
 	MystyleMainService mystylesrv = MystyleMainService.instance();
 	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 	

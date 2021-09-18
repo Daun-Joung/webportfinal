@@ -52,9 +52,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Paytone+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="privatebrddetailcss.css">
+	<link rel="stylesheet" type="text/css" href="../privatepage/privatebrddetailcss.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<script src="privatebrddetailjs.js"></script>
+	<script src="../privatepage/privatebrddetailjs.js"></script>
 	
 </head>
 
