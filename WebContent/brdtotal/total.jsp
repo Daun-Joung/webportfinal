@@ -176,7 +176,7 @@ List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 					PrivateBrdLikeChkService pblcs = PrivateBrdLikeChkService.instance();
 					PrivateBrdLikeDTO dto = new PrivateBrdLikeDTO();
 					dto.setPbrdno(totallist.get(i).getPbrdno());
-					dto.setUser_id(totallist.get(i).getId());
+					dto.setUser_id(id);
 
 					int likecount = pblcs.likeCount(dto);
 

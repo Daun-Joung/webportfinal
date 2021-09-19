@@ -18,19 +18,24 @@ $(document).ready(function(){
 		
 	});
 	
-	$('#replyregibtn').click(function(){
+	$("#replyregibtn").click(function(){
 		
+		var user_id = $(this).parents("#replyin").find("#user_id").val();
+		var pbrdno = $(this).parents("#replyin").find("#pbrdno").val();
+		var reply_con = $(this).parents("#replyin").find("#reply_con").val();
+		var user_img = $(this).parents("#replyin").find("#user_img").val();
+	
 		$.ajax({
 			url:"privatebrdreply.do?comm=privatebrdreply",
 			type:"post",
 			data: { 
-				"user_id":$("#user_id").val(),
+				"user_id": user_id,
 				
-				"pbrdno":$("#pbrdno").val(),
+				"pbrdno": pbrdno,
 				
-				"reply_con":$("#reply_con").val(),
+				"reply_con": reply_con,
 				
-				"user_img":$("#user_img").val()
+				"user_img": user_img
 				},
 			
 			success :function onData(data){
