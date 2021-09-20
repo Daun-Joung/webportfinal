@@ -201,4 +201,28 @@
 	
 	</select>
 	
+	<select id="privatebrdcount" parameterType ="java.util.Map" resultType="Integer">
+	
+	select count(*) from privatebrd_tbl where user_id = #{user_id};
+	
+	</select>
+	
+	<select id="followingcount" parameterType ="java.util.Map" resultType="Integer">
+	
+	select count(*) from follow_tbl where following = #{following};
+	
+	</select>
+	
+	<select id="followercount" parameterType ="java.util.Map" resultType="Integer">
+	
+	select count(*) from follow_tbl where follower = #{follower};
+	
+	</select>
+	
+	<select id="followcheck" parameterType ="java.util.Map" resultType="Integer">
+	
+	select count(*) from follow_tbl where following =#{following} and follower = #{follower};
+	
+	</select>
+	
 </mapper>

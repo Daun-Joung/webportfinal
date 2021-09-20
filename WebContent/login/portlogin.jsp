@@ -69,14 +69,14 @@ function nullchk (){
 			</div>
 		</div>
 		<div class="headermid">
-			<div class="mainlogo"><a href="../main/portmainfinal.jsp">Fit-in</a></div>
+			<div class="mainlogo"><a href="../main/portmainfinal.jsp">FIT-IN</a></div>
 		</div>
 		<div class="headerbot">
 			<div class="mainnav">
 				<ul>
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">MYSTYLE</a></li>
-					<li><a href="#">MAGAZINE</a></li>
+					<li><a href="../main/portmainfinal.jsp">HOME</a></li>
+					<li><a href="../privatepage/privatebrd.jsp">MYSTYLE</a></li>
+					<li><a href="magazineList.do?comm=magazineList">MAGAZINE</a></li>
 					<li><a href="../board_01/portBoard_01.jsp">MARKET</a></li>
 				</ul>
 			</div>
@@ -117,7 +117,7 @@ function nullchk (){
 	<footer>
 		<div class="footerwrap">
 			<ul>
-				<li class="footerlogo">Fit-in</li>
+				<li class="footerlogo">FIT-IN</li>
 				<li class="footeradd">www.fit-in.com</li>
 				<li class="footerinfo"><a href="#">문의사항</a></li>
 			</ul>

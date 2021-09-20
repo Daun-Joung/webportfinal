@@ -1,3 +1,6 @@
+<%@page import="svc.FollowerCountService"%>
+<%@page import="svc.FollowingCountService"%>
+<%@page import="svc.PrivateBrdCountService"%>
 <%@page import="bean.PrivateBrdDTO"%>
 <%@page import="svc.PrivateBrdSelService"%>
 <%@page import="bean.PrivateInfoDTO"%>
@@ -19,6 +22,15 @@
 	
 	PrivateBrdSelService pbss = PrivateBrdSelService.instance();
 	List<PrivateBrdDTO> pbrdlist = pbss.getPrivateBrd(id);
+	
+	PrivateBrdCountService pbcs = PrivateBrdCountService.instance();
+	int count = pbcs.getPrivateBrdCount(id);
+	
+	FollowingCountService fcs = FollowingCountService.instance();
+	int followingcount = fcs.followingcount(id);
+	
+	FollowerCountService fcs2 = FollowerCountService.instance();
+	int followercount = fcs2.followercount(id);
 	
 %>
 
@@ -140,15 +152,15 @@
 						<div class = "profilenum">
 							<div class="follow">
 								<p>팔로워</p>
-								<p>숫자</p>
+								<p><%=followercount%></p>
 							</div>
 							<div class="follow">
 								<p>팔로잉</p>
-								<p>숫자</p>
+								<p><%=followingcount%></p>
 							</div>
 							<div class="follow">
 								<p>게시글</p>
-								<p>숫자</p>
+								<p><%=count%></p>
 							</div>
 						</div>			
 					</div>

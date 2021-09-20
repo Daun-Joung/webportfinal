@@ -1,3 +1,8 @@
+<%@page import="svc.FollowChkService"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="svc.FollowerCountService"%>
+<%@page import="svc.FollowingCountService"%>
+<%@page import="svc.PrivateBrdCountService"%>
 <%@page import="bean.PrivateBrdDTO"%>
 <%@page import="svc.PrivateBrdSelService"%>
 <%@page import="bean.PrivateInfoDTO"%>
@@ -21,6 +26,22 @@
 	
 	PrivateBrdSelService pbss = PrivateBrdSelService.instance();
 	List<PrivateBrdDTO> pbrdlist = pbss.getPrivateBrd(user_id);
+	
+	PrivateBrdCountService pbcs = PrivateBrdCountService.instance();
+	int count = pbcs.getPrivateBrdCount(user_id);
+	
+	FollowingCountService fcs = FollowingCountService.instance();
+	int followingcount = fcs.followingcount(user_id);
+	
+	FollowerCountService fcs2 = FollowerCountService.instance();
+	int followercount = fcs2.followercount(user_id);
+	
+	HashMap <String,String> map = new HashMap<String,String>();
+	map.put("following", id);
+	map.put("follower", user_id);
+	
+	FollowChkService fcs3 = FollowChkService.instance();
+	int followchk = fcs3.followcheck(map);
 	
 %>
 
@@ -138,20 +159,23 @@
 							}
 						}
 						%>
+							
+							<a href="#"><input type ="button" name ="profileupbtn" value="팔로우 하기"></a>
+						
 							</div>
 						</div>
 						<div class = "profilenum">
 							<div class="follow">
 								<p>팔로워</p>
-								<p>숫자</p>
+								<p><%=followercount%></p>
 							</div>
 							<div class="follow">
 								<p>팔로잉</p>
-								<p>숫자</p>
+								<p><%=followingcount%></p>
 							</div>
 							<div class="follow">
 								<p>게시글</p>
-								<p>숫자</p>
+								<p><%=count%></p>
 							</div>
 						</div>			
 					</div>
