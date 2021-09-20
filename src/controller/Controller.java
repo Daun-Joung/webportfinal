@@ -12,6 +12,8 @@ import action.Action;
 import action.BoardReplyAction;
 import action.BoardReplyDeleteAction;
 import action.BoardReplyModifyAction;
+import action.FollowDelAction;
+import action.FollowInAction;
 import action.MagazineAction;
 import action.MagazineDeleteAction;
 import action.MagazineDetailAction;
@@ -250,6 +252,24 @@ public class Controller extends HttpServlet{
 				
 				else if(comm.equals("marketdetail")) {
 					inter = MarketDetailAction.instance();
+					try {
+						forward = inter.execute(request, response);
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				else if(comm.equals("followin")) {
+					inter = FollowInAction.instance();
+					try {
+						forward = inter.execute(request, response);
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				else if(comm.contentEquals("followdel")) {
+					inter = FollowDelAction.instance();
 					try {
 						forward = inter.execute(request, response);
 					}catch (Exception e) {

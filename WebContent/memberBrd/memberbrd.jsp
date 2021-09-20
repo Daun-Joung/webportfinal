@@ -159,8 +159,18 @@
 							}
 						}
 						%>
+							<%if(followchk == 0 && !user_id.equals(id)){
+								%>
+								
+								<a href="followin.do?comm=followin&following=<%=id%>&follower=<%=user_id%>"><input type ="button" name ="profileupbtn" value="팔로우 하기"></a>
+								
+							<%}else if(followchk != 0 && !user_id.equals(id)){
+								%>
+								<a href="followdel.do?comm=followdel&following=<%=id%>&follower=<%=user_id%>"><input type ="button" name ="profileupbtn" value="팔로우 취소"></a>
+								<%
+							}
+							%>
 							
-							<a href="#"><input type ="button" name ="profileupbtn" value="팔로우 하기"></a>
 						
 							</div>
 						</div>

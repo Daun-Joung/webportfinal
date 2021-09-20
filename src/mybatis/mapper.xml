@@ -225,4 +225,16 @@
 	
 	</select>
 	
+	<insert id="followin" parameterType = "java.util.Map" >
+	
+	insert into follow_tbl values(default, #{following}, #{follower});
+	
+	</insert>
+	
+	<delete id="followdelete" parameterType = "java.util.Map" >
+	
+	delete from follow_tbl where following =#{following} and follower = #{follower};
+	
+	</delete>
+	
 </mapper>
