@@ -84,8 +84,8 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .reply span img { width: 20px; height: 20px; }
 .reply label { display: inline-block; margin-left: 5px;}
 
-.upanddel { width: 100px; height: 100px; position: absolute; right: 10px; top: 30px; display: none;}
-.upanddel ul { width: 100px; height: 80px; border: 0.2px #D5D5D5 solid; padding-top: 20px; background-color: white;}
+.upanddel { width: 100px; height: 50px; position: absolute; right: 10px; top: 30px; display: none;}
+.upanddel ul { width: 100px; height: 50px; border: 0.2px #D5D5D5 solid; padding-top: 20px; background-color: white;}
 .upanddel ul li { width: 100px; height: 30px; text-align: center; }
 .upanddel ul li label { display:inline-block; width: 100px; height: 23px; padding-top: 7px;}
 .upanddel ul li label:hover{ background-color: black; color: white; cursor: pointer;}

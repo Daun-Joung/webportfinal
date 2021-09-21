@@ -237,4 +237,18 @@
 	
 	</delete>
 	
+	<select id="portmain" parameterType="java.util.Map" resultType="bean.PortMainDTO">
+	
+	select *, 
+	(select B.user_weight from privateinfo_tbl B where B.user_id = A.user_id) user_weight,
+	(select B.user_height from privateinfo_tbl B where B.user_id = A.user_id) user_height,
+	(select B.user_top from privateinfo_tbl B where B.user_id = A.user_id) user_top,
+	(select B.user_bottom from privateinfo_tbl B where B.user_id = A.user_id) user_bottom,
+	(select B.user_shoe from privateinfo_tbl B where B.user_id = A.user_id) user_shoe,
+	(select B.user_img from privateinfo_tbl B where B.user_id = A.user_id) user_img,
+	(select count(*) from privatebrdlike_tbl C where C.user_id = #{user_id} and C.pbrdno = A.pbrdno) cnt
+	from privatebrd_tbl A where A.user_id not in (#{user_id});
+	
+	</select>
+	
 </mapper>

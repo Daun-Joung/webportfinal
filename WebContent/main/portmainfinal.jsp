@@ -1,3 +1,9 @@
+<%@page import="bean.PrivateInfoDTO"%>
+<%@page import="svc.MystyleMainService"%>
+<%@page import="bean.PrivateBrdReplyDTO"%>
+<%@page import="svc.PrivateBrdReplySelService"%>
+<%@page import="bean.PortMainDTO"%>
+<%@page import="svc.PortMainService"%>
 <%@page import="svc.MagazineMainService"%>
 <%@page import="bean.MagazineDTO"%>
 <%@page import="java.util.List"%>
@@ -12,6 +18,12 @@
 
  	MagazineMainService srv = MagazineMainService.instance();
 	List<MagazineDTO> mainlist = srv.mainSelect();
+	
+	PortMainService pms = PortMainService.instance();
+	List<PortMainDTO> mainlist_02 = pms.portMain(id);
+	
+	MystyleMainService mystylesrv = MystyleMainService.instance();
+	List<PrivateInfoDTO> profilelist = mystylesrv.getPrivateInfo(id);
 	
 %>
 
@@ -113,20 +125,21 @@
 		%>		
 		</div>
 		
+		<%for(int j=0; j<mainlist_02.size();j++){
+		%>
 		
-		<div class="detailwrap">
+			<div class="detailwrap">
 			<div class="detailheader">
 				<div class="detailheaderwrap">
 					<div class="user_pic">
-						<img src ="../portimg/user.png">
+						<img src ="../privateProfileUpload/<%=mainlist_02.get(j).getUser_img()%>">
 					</div>
-					<div class="user_id"> user_id </div>
+					<div class="user_id"> <%=mainlist_02.get(j).getUser_id() %> </div>
 					<div class="headermenu">
 						<img src="../portimg/menu.png">
 						<div class="upanddel">
 							<ul>
-								<li><label id="privatebrdupdate">수정</label></li>
-								<li><a href="#>"><label id="privatebrddel">삭제</label></a> </li>
+								<li><label id="privatebrdupdate">신고하기</label></li>
 							</ul>
 						</div>
 					</div>
@@ -134,17 +147,17 @@
 			</div>
 			<div class="detailsection">
 				<div class="pbrd_pic">
-					<img src="../portimg/user.png">
+					<img src="../privateBrdUpload/<%=mainlist_02.get(j).getPbrd_pic()%>">
 				</div>
 			</div>
 			<div class="detailmiddle">
 				<div class="privateinfodetail">
 					<ul>
-						<li>키: 190cm</li>
-						<li>몸무게: 80kg</li>
-						<li>상의사이즈: xxl</li>
-						<li>하의사이즈: 34 </li>
-						<li>신발사이즈: 270</li>
+						<li>키: <%=mainlist_02.get(j).getUser_height() %>cm</li>
+						<li>몸무게: <%=mainlist_02.get(j).getUser_weight() %>kg</li>
+						<li>상의사이즈: <%=mainlist_02.get(j).getUser_top() %></li>
+						<li>하의사이즈: <%=mainlist_02.get(j).getUser_bottom() %> </li>
+						<li>신발사이즈: <%=mainlist_02.get(j).getUser_shoe() %></li>
 					</ul>
 				</div>
 			</div>			
@@ -153,56 +166,91 @@
 				<div class="likeandreply">
 					<div class="like" id="like">
 					
-		
+					<%
+					if(mainlist_02.get(j).getCnt() == 1){
+						%>
+						<span><img src="../portimg/heart.png"></span>
+						<%
+					}else{
+						 %>
 						<span><img src="../portimg/like.png"></span>
-				
-						
+						<%
+					}
+					%>						
 						<label>좋아요</label>
 					</div>
 					<div class="reply">
 						<span><img src="../portimg/message.png"></span>
 						<label>댓글달기</label>
 					</div>
-					<input type="hidden" id="likecountchk" value="">
+					<input type="hidden" id="likecountchk" value="<%=mainlist_02.get(j).getCnt()%>">
 				</div>
+				
 				<div class="replywrap">
+				<%
+				
+				PrivateBrdReplyDTO dto = new PrivateBrdReplyDTO();
+				dto.setPbrdno(mainlist_02.get(j).getPbrdno());
+				
+				PrivateBrdReplySelService pbrss = PrivateBrdReplySelService.instance();
+				List<PrivateBrdReplyDTO> replylist = pbrss.getReplyList(dto);
+				
+				for(int k=0;k<replylist.size();k++){
+					%>
+					
+					
 					
 					<div class="printreply">
 						<div class="replyprintpic">
 						
-							<img src ="../portimg/user.png">
+							<img src ="../privateProfileUpload/<%=replylist.get(k).getUser_img()%>">
 						
 						</div>
 						<div class="replyprintbox">
-							<p>user_id</p>
-							<input type="text" name ="replyprint" id="replyprint" value="" readonly>
+							<p><%=replylist.get(k).getUser_id() %></p>
+							<input type="text" name ="replyprint" id="replyprint" value="<%=replylist.get(k).getReply_con()%>" readonly>
 						</div>
 					
 					</div>
 					
-					<div class="replyin">
+								
+					<%
+				}
+				%>
+					<% for(int a=0; a<profilelist.size(); a++){
+					%>	
+						
+						<div class="replyin">
 						<div class="replypic">
 				
-							<img src ="../portimg/user.png">
+							<img src ="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
 							
 						</div>
 						<div class="replybox">
-							<input type="hidden" id= "user_id" value="" />
+							<input type="hidden" id= "user_id" value="<%=profilelist.get(a).getUser_id()%>" />
 							
-							<input type="hidden"  id= "pbrdno" value="" />
+							<input type="hidden"  id= "pbrdno" value="<%=mainlist_02.get(j).getPbrdno() %>" />
 				
-								<input type="hidden" id="user_img" value="../portimg/user.png">
+								<input type="hidden" id="user_img" value="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
 			
 							<textarea placeholder="댓글을 입력하세요" id ="reply_con" ></textarea>
 							<input type="button" value="댓글 등록" id="replyregibtn">
 						</div>
 					</div>
+						
+					<%
+					}
+					%>
+					
 				</div>
+		
+				
 			</div>
 		</div>
-
-		
-		
+					
+		<%
+		}
+		%>
 		
 	</section>
 	<footer>
