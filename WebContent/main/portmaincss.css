@@ -56,6 +56,57 @@ section { width: 1280px; height: 100%; margin: 0px auto 20px auto;}
 .imgpart div { float: left; position: relative; }
 .imgpart img { width: 680px; height: 600px; position: absolute; }
 
+.detailwrap { width: 600px; height: auto; margin: 20px auto;  border: 0.2px #D5D5D5 solid;}
+.detailheader { width: 600px; height: auto;}
+.detailheaderwrap { width: 600px; height: auto; display: inline-block; }
+.user_pic { width: 40px; height: 40px; float: left; padding: 10px; }
+.user_pic img { width: 40px; height: 40px; border-radius: 70%; object-fit: cover; }
+.user_id { width:440px; height: 40px; float: left; font-size: 15pt; padding-top: 20px; margin-left: 30px;}
+.user_id:hover { text-decoration: underline; cursor: pointer;}
+.headermenu { width: 30px; heigth: 30px; float:right; padding:10px; margin-top: 10px; position: relative; }
+.headermenu img { width: 25px; height: 25px; }
+.headermenu img:hover { cursor: pointer;}
+.detailsection { width: 600px; height: auto; }
+.pbrd_pic { width: 600px; height: auto;}
+.pbrd_pic img { width:600px; height: 600px; object-fit: cover; }
+.detailmiddle { width: 600px; height: auto;}
+.privateinfodetail { width: 600px; height: auto;}
+.privateinfodetail ul { width: 590px; height: auto; padding-left: 10px;}
+.privateinfodetail ul li { width: 100px; height: auto; margin-right: 20px; display: inline; }
+.detailfooter { width: 600px; height: auto;}
+.likeandreply { width: 580px; heigth: 50px; padding: 10px; display: inline-block;}
+.like { width: 150px; height: 35px; padding-top: 15px; float: left; border-radius: 10px; text-align: center; margin-right: 10px; display: inline-block;}
+.like:hover { background-color: #D5D5D5; cursor: pointer;}
+.like span img { width: 20px; height: 20px;}
+.like label { display: inline-block; margin-left: 5px; margin-bottom: 5px;}
+.reply { width: 150px; height: 35px; padding-top: 15px; float: left; border-radius: 10px; text-align: center; }
+.reply:hover { background-color: #D5D5D5; cursor: pointer;}
+.reply span img { width: 20px; height: 20px; }
+.reply label { display: inline-block; margin-left: 5px;}
+
+.upanddel { width: 100px; height: 100px; position: absolute; right: 10px; top: 30px; display: none;}
+.upanddel ul { width: 100px; height: 80px; border: 0.2px #D5D5D5 solid; padding-top: 20px; background-color: white;}
+.upanddel ul li { width: 100px; height: 30px; text-align: center; }
+.upanddel ul li label { display:inline-block; width: 100px; height: 23px; padding-top: 7px;}
+.upanddel ul li label:hover{ background-color: black; color: white; cursor: pointer;}
+
+.replywrap { width: 600px; height: auto;}
+
+.replyin { width: 580px; height: auto; display: inline-block; padding: 10px; display: none;}
+.replypic { width: 30px; height: 30px; float: left; padding: 10px 20px 10px 10px;}
+.replypic img{ width: 30px; height: 30px; border-radius: 70%;}
+.replybox { width: 490px; padding: 20px 10px 20px 15px; height: auto; float: left; background-color: #D5D5D5; border-radius: 10px;}
+.replybox textarea { width: 480px; height: auto; border: none; outline: none; background-color: #D5D5D5; resize: none; overflow: hidden;}
+.replybox input[type="button"] { width: 150px; height: 30px; border:none; outline: none; background-color: black; color: white; border-radius: 10px;}
+.replybox input[type="button"]:hover { cursor: pointer; }
+
+.printreply { width: 580px; height: auto; padding: 0px 10px 10px 10px; display: inline-block; }
+.replyprintpic { width: 30px; height: 30px; float:left; padding: 10px 20px 10px 10px; }
+.replyprintpic img { width: 30px; height: 30px; border-radius: 70%; }
+.replyprintbox { width: 400px; padding: 20px 10px 20px 15px; height: auto; float: left; background-color: #D5D5D5; border-radius: 10px; }
+.replyprintbox input[type="text"]{ width: 390px; height: auto; border: none; outline: none; background-color: #D5D5D5; overflow: hidden;}
+
+
 /* Layout - footer */
 
 footer{ width: 100%; height: 200px; border-top: 2px gray solid;}
