@@ -134,7 +134,7 @@
 					<div class="user_pic">
 						<img src ="../privateProfileUpload/<%=mainlist_02.get(j).getUser_img()%>">
 					</div>
-					<div class="user_id"> <%=mainlist_02.get(j).getUser_id() %> </div>
+					<div class="user_id"><a href="../memberBrd/memberbrd.jsp?user_id=<%=mainlist_02.get(j).getUser_id()%>"> <%=mainlist_02.get(j).getUser_id() %> </a></div>
 					<div class="headermenu">
 						<img src="../portimg/menu.png">
 						<div class="upanddel">
