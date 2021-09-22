@@ -71,7 +71,7 @@
 	
 	<select id ="privatebrdsel" parameterType ="bean.PrivateBrdDTO" resultType = "bean.PrivateBrdDTO">
 	
-	select * from privatebrd_tbl where user_id = #{user_id};
+	select * from privatebrd_tbl where user_id = #{user_id} order by pbrdno desc;
 	
 	</select>
 	
