@@ -27,16 +27,13 @@ public class MarketSearchService {
 		SqlSession sqlsession = factory.openSession();
 		
 		
-		
 		if( dto.getCriteria_01() == 1) {
 		   searchlist = sqlsession.selectList("marketidsrch", dto);
 		}else if( dto.getCriteria_01() == 2){
 		   searchlist = sqlsession.selectList("markettitlesrch", dto);
 		}
 		
-		
-		
-		
+		sqlsession.close();
 		
 		return searchlist;
 	}

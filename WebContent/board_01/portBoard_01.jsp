@@ -168,7 +168,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 							<option value="2">제목</option>
 						</select> 
 						<select name="criteria_02" class="criteria_02">
-							<option value="0">전체</option>
+							<option value="360">전체</option>
 							<option value="1">오늘</option>
 							<option value="7">1주일</option>
 							<option value="30">1달</option>
