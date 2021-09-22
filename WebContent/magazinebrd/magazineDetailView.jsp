@@ -115,12 +115,17 @@
 			<div>
 				<ul>
 				<% for(int j=0; j<magaDetail.size(); j++){%>
-					<li><a href="magazineupdatesel.do?comm=magazineUpdateSel&magano=<%=magaDetail.get(j).getMagano()%>&page=<%=nowPage%>"><input type = "button" value = "수정" class = "magaregibtn"></a></li>
-					<li><a href="magazinedelete.do?comm=magazineDelete&magano=<%=magaDetail.get(j).getMagano()%>"><input type = "button" value = "삭제" class= "magaregibtnsec"></a></li>
-				<%} %>
+					<li><a href="magazineupdatesel.do?comm=magazineUpdateSel&magano=<%=magaDetail.get(j).getMagano()%>
+					&page=<%=nowPage%>"><input type = "button" value = "수정" class = "magaregibtn"></a></li>
+					
+					<li><a href="magazinedelete.do?comm=magazineDelete
+					&magano=<%=magaDetail.get(j).getMagano()%>"><input type = "button" value = "삭제" class= "magaregibtnsec"></a></li>
+					
+				<% 
+				} 
+				%>
 				</ul>	
 			</div>	
-			
 			<%
 				}
 			}

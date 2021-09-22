@@ -14,37 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="portlogin.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="portloginjs.js">
-		
-
-		
-
-
-function nullchk (){
-	
-	var id = document.getElementById("idin");
-	var pw = document.getElementById("pwin");
-	
-	if(id.value.length == 0){
-		
-		id.focus();
-			document.getElementById("idfault").innerHTML="아이디를 입력하세요"
-			document.getElementById("idfault").style.color='red';
-			document.getElementById("idfault").style.align='left';
-		return false;
-		
-	}else if(pw.value.length == 0){
-		
-		pw.focus();
-			document.getElementById("pwfault").innerHTML="비밀번호를 입력하세요"
-			document.getElementById("pwfault").style.color='red';
-		return false;
-	
-	}
-	
-}
-		
-	</script>
+	<script type="text/javascript" src="portloginjs.js"></script>
 
 </head>
 	<form action="loginOk.jsp" method="post" onsubmit = "return nullchk()">

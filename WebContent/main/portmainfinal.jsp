@@ -226,16 +226,21 @@
 							<img src ="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
 							
 						</div>
+						
 						<div class="replybox">
+						
 							<input type="hidden" id= "user_id" value="<%=profilelist.get(a).getUser_id()%>" />
 							
-							<input type="hidden"  id= "pbrdno" value="<%=mainlist_02.get(j).getPbrdno() %>" />
+							<input type="hidden" id= "pbrdno" value="<%=mainlist_02.get(j).getPbrdno() %>" />
 				
-								<input type="hidden" id="user_img" value="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
+							<input type="hidden" id="user_img" value="../privateProfileUpload/<%=profilelist.get(a).getUser_img()%>">
 			
 							<textarea placeholder="댓글을 입력하세요" id ="reply_con" ></textarea>
+							
 							<input type="button" value="댓글 등록" id="replyregibtn">
+							
 						</div>
+						
 					</div>
 						
 					<%
